@@ -1,0 +1,6 @@
+title: MAFF DEMO
+baseurl: "/maff-demo-ui-form"  # Your GitHub repo name (leave empty "" for user/org site)
+url: "https://makaraphuoy.github.io"  # Your GitHub Pages URL
+
+# For local development
+# Run with: bundle exec jekyll serve --baseurl ""
