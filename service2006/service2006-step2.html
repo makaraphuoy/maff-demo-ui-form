@@ -285,11 +285,11 @@
         <!-- Page header -->
         <div class="page-header-soft">
             <div class="page-title">
-                ២. វិញ្ញាបនបត្របញ្ជាក់ការចុះបញ្ជីឃ្លាំងសន្និធិជីកសិកម្ម
+                ៦. លិខិតអនុញ្ញាតផ្គត់ផ្គង់ចែកចាយថ្នាំកសិកម្ម
             </div>
 
             <div class="page-home">
-                <a href="home.html" class="home-link">
+                <a href="/index.html" class="home-link">
                     <img class="home-icon" src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="home">
                     ទំព័រដើម
                 </a>
@@ -409,43 +409,24 @@
 
                         <label class="checkbox-pill-row">
                             <input type="checkbox" name="purpose[]" value="registration">
-                            <span>នាំចូលនាំចេញ</span>
-                        </label>
-
-                        <label class="checkbox-pill-row">
-                            <input type="checkbox" name="purpose[]" value="analysis">
-                            <span>ការលាយផ្សំ</span>
-                        </label>
-
-                        <label class="checkbox-pill-row">
-                            <input type="checkbox" name="purpose[]" value="bioeffectiveness">
-                            <span>ការវេចខ្ចប់ជាថ្មី</span>
-                        </label>
-
-                        <label class="checkbox-pill-row">
-                            <input type="checkbox" name="purpose[]" value="commercial">
                             <span>ការផ្គត់ផ្គង់ចែកចាយ</span>
                         </label>
 
                         <label class="checkbox-pill-row">
-                            <input type="checkbox" name="purpose[]" value="non_commercial">
-                            <span style="color: #b91c1c;">ការបន្តសុពលភាពវិញ្ញាបនបត្រ</span>
+                            <input type="checkbox" name="purpose[]" value="analysis">
+                            <span>ការផ្ទេរសិទ្ធិលើលិខិតអនុញ្ញាត</span>
                         </label>
 
                         <label class="checkbox-pill-row">
-                            <input type="checkbox" name="purpose[]" value="new_register">
-                            <span style="color: #b91c1c;">ការផ្ទេរសិទ្ធិលើវិញ្ញាបនបត្រ</span>
+                            <input type="checkbox" name="purpose[]" value="bioeffectiveness">
+                            <span>ការបន្តសុពលភាពលិខិតអនុញុាត</span>
                         </label>
 
                         <label class="checkbox-pill-row">
-                            <input type="checkbox" name="purpose[]" value="renew">
-                            <span style="color: #b91c1c;">ការប្រើប្រាស់ដោយផ្ទាល់</span>
+                            <input type="checkbox" name="purpose[]" value="commercial">
+                            <span>គោលបំណងផ្សេងទៀត</span>
                         </label>
 
-                        <label class="checkbox-pill-row">
-                            <input type="checkbox" name="purpose[]" value="other">
-                            <span style="color: #b91c1c;">គោលបំណងផ្សេងទៀត</span>
-                        </label>
 
                     </div>
 
@@ -453,7 +434,7 @@
 
                     <!-- Sub-section 2 -->
                     <h3 style="color:#008000; font-size:16px; margin-bottom:12px;">
-                        ២. ព័ត៌មានឃ្លាំងសន្និធិ
+                        ២. យថាប្រភេទនិងបរិមាណថ្នាំកសិកម្មដែលស្នើសុំការផ្គត់ផ្គង់ចែកចាយ
                     </h3>
 
                     <!-- Add button -->
@@ -476,10 +457,13 @@
                             <thead>
                                 <tr>
                                     <th>ល.រ.</th>
-                                    <th>ឈ្មោះឃ្លាំងសន្និធិ</th>
-                                    <th>ផ្ទៃឃ្លាំងសន្និធិ</th>
-                                    <th>សមត្ថភាពសន្និធិ</th>
-                                    <th>អាសយដ្ឋាន</th>
+                                    <th>ឈ្មោះពាណិជ្ជកម្មផលិតផលថ្នាំ</th>
+                                    <th>ឈ្មោះទូទៅ(សារធាតុសកម្ម)</th>
+                                    <th>លេខអត្តសញ្ញាណ</th>
+                                    <th>លេខបញ្ជិកា</th>
+                                    <th>ក្រុមហ៊ុនដើម</th>
+                                    <th>ប្រទេសប្រភពដើម</th>
+                                    <th>បរិមាណស្នើសុំផ្គត់ផ្គង់ចែកចាយប្រចាំឆ្នាំ</th>
                                     <th>សកម្មភាព</th>
                                 </tr>
                             </thead>
@@ -489,7 +473,7 @@
                         </table>
 
                         <div id="fertilizerCountWrapper">
-                            ចំនួនសរុប: <span id="fertilizerCount">0</span>
+                            ចំនួនមុខសរុប: <span id="fertilizerCount">0</span>
                         </div>
                     </div>
 
@@ -541,109 +525,115 @@
         <div class="popup-backdrop">
             <div class="popup-content">
 
-                <div class="popup-title" id="popupTitle">បន្ថែមព័ត៌មានឃ្លាំងសន្និធិ</div>
+                <div class="popup-title" id="popupTitle">យថាប្រភេទនិងបរិមាណថ្នាំកសិកម្មដែលស្នើសុំការផ្គត់ផ្គង់ចែកចាយ</div>
 
                 <div class="popup-form-grid">
 
-                    <!-- Row 1: Warehouse basic info -->
+                    <!-- Row 1: Product info -->
                     <div class="popup-row">
                         <div class="form-group">
-                            <label>ឈ្មោះឃ្លាំងសន្និធិ <span class="required">*</span></label>
-                            <input type="text" id="warehouse_name">
+                            <label>ឈ្មោះពាណិជ្ជកម្មផលិតផលថ្នាំ	 <span class="required">*</span></label>
+                            <input type="text" id="fert_type">
                         </div>
-
                         <div class="form-group">
-                            <label>ផ្ទៃឃ្លាំងសន្និធិ (m²) <span class="required">*</span></label>
-                            <input type="text" id="warehouse_area">
+                            <label>ឈ្មោះទូទៅ(សារធាតុសកម្ម)	 <span class="required">*</span></label>
+                            <input type="text" id="fert_type">
                         </div>
-
                         <div class="form-group">
-                            <label>សមត្ថភាពសន្និធិ (តោន) <span class="required">*</span></label>
-                            <input type="text" id="warehouse_capacity">
+                            <label>លេខអត្តសញ្ញាណ	 <span class="required">*</span></label>
+                            <input type="text" id="fert_type">
+                        </div>
+                        <div class="form-group">
+                            <label>លេខបញ្ជិកា	 <span class="required">*</span></label>
+                            <input type="text" id="fert_type">
+                        </div>
+                        <div class="form-group">
+                            <label>ក្រុមហ៊ុនដើម	 <span class="required">*</span></label>
+                            <input type="text" id="fert_type">
+                        </div>
+                        <div class="form-group">
+                            <label>បរិមាណស្នើសុំផ្គត់ផ្គង់ចែកចាយប្រចាំឆ្នាំ <span class="required">*</span></label>
+                            <input type="text" id="fert_trade_name">
                         </div>
                     </div>
 
-                    <!-- Address title -->
-                    <h4 style="margin-top: 8px; color:#008000; font-size:15px;">
-                        អាសយដ្ឋាន
+                    <!-- Production Title -->
+                    <h4 style="grid-column: 1 / -1; margin-top:15px; color:#008000; font-size:15px;">
+                        ព័ត៌មានការផលិត
                     </h4>
 
-                    <!-- Row 2: Province, District, Commune -->
+                    <!-- Row 2: Production info -->
                     <div class="popup-row">
                         <div class="form-group">
-                            <label>ខេត្ត/រាជធានី <span class="required">*</span></label>
-                            <select id="addr_province">
+                            <label>ប្រទេសប្រភពដើមផលិត <span class="required">*</span></label>
+                            <select id="fert_origin_country">
                                 <option value="">ជ្រើសរើស</option>
-                                <option value="phnom_penh">រាជធានីភ្នំពេញ</option>
-                                <option value="kandal">ខេត្តកណ្ដាល</option>
-                                <option value="kampong_cham">ខេត្តកំពង់ចាម</option>
+                                <option value="kh">កម្ពុជា</option>
+                                <option value="th">ថៃ</option>
+                                <option value="vn">វៀតណាម</option>
+                                <option value="cn">ចិន</option>
                                 <option value="other">ផ្សេងៗ</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label>ស្រុក/ខណ្ឌ <span class="required">*</span></label>
-                            <select id="addr_district">
-                                <option value="">ជ្រើសរើស</option>
-                                <option value="chamkarmon">ខណ្ឌចំការមន</option>
-                                <option value="7makara">ខណ្ឌ៧មករา</option>
-                                <option value="other">ផ្សេងៗ</option>
-                            </select>
+                            <label>ផលិតដោយក្រុមហ៊ុន <span class="required">*</span></label>
+                            <input type="text" id="fert_produced_company">
                         </div>
 
                         <div class="form-group">
-                            <label>ឃុំ/សង្កាត់ <span class="required">*</span></label>
-                            <select id="addr_commune">
+                            <label>ផលិតដោយប្រទេស <span class="required">*</span></label>
+                            <select id="fert_produced_country">
                                 <option value="">ជ្រើសរើស</option>
-                                <option value="toul_tompoung">សង្កាត់ទួលទំពូង</option>
-                                <option value="boeung_keng_kang">សង្កាត់បឹងកេងកង</option>
+                                <option value="kh">កម្ពុជា</option>
+                                <option value="th">ថៃ</option>
+                                <option value="vn">វៀតណាម</option>
+                                <option value="cn">ចិន</option>
                                 <option value="other">ផ្សេងៗ</option>
                             </select>
                         </div>
                     </div>
 
-                    <!-- Row 3: Village, Street, House -->
-                    <div class="popup-row">
+                    <!-- Packaging Title -->
+                    <!-- <h4 style="grid-column: 1 / -1; margin-top:15px; color:#008000; font-size:15px;">
+                        ព័ត៌មានការវេចខ្ចប់
+                    </h4> -->
+
+                    <!-- Row 3: Packaging info -->
+                    <!-- <div class="popup-row">
                         <div class="form-group">
-                            <label>ភូមិ <span class="required">*</span></label>
-                            <select id="addr_village">
+                            <label>ប្រទេសប្រភពដើមវេចខ្ចប់ជាថ្មី/នាំចេញ <span class="required">*</span></label>
+                            <select id="fert_repack_country">
                                 <option value="">ជ្រើសរើស</option>
-                                <option value="village1">ភូមិ ១</option>
-                                <option value="village2">ភូមិ ២</option>
+                                <option value="kh">កម្ពុជា</option>
+                                <option value="th">ថៃ</option>
+                                <option value="vn">វៀតណាម</option>
+                                <option value="cn">ចិន</option>
                                 <option value="other">ផ្សេងៗ</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label>ផ្លូវ</label>
-                            <input type="text" id="addr_street">
+                            <label>វេចខ្ចប់ដោយក្រុមហ៊ុន <span class="required">*</span></label>
+                            <input type="text" id="fert_repack_company">
                         </div>
 
                         <div class="form-group">
-                            <label>ផ្ទះលេខ/អាគារ</label>
-                            <input type="text" id="addr_house_no">
+                            <label>វេចខ្ចប់ដោយប្រទេស <span class="required">*</span></label>
+                            <select id="fert_repack_by_country">
+                                <option value="">ជ្រើសរើស</option>
+                                <option value="kh">កម្ពុជា</option>
+                                <option value="th">ថៃ</option>
+                                <option value="vn">វៀតណាម</option>
+                                <option value="cn">ចិន</option>
+                                <option value="other">ផ្សេងៗ</option>
+                            </select>
                         </div>
-                    </div>
-
-                    <!-- Row 3: Village, Street, House -->
-                    <div class="popup-row">
-                        <div class="form-group">
-                            <label>លេខទូរសព្ទ <span class="required">*</span></label>
-                              <input type="text" id="addr_house_no">
-                        </div>
-
-                        <div class="form-group">
-                            <label>លេខទូរសព្ទលើតុ</label>
-                            <input type="text" id="addr_street">
-                        </div>
-
-                        <div class="form-group">
-                            <label>អ៊ីម៉ែល</label>
-                            <input type="text" id="addr_house_no">
-                        </div>
-                    </div>
+                    </div> -->
 
                 </div>
+
+
 
                 <div class="popup-actions">
                     <button class="btn btn-outline-green" type="button" onclick="closeFertilizerPopup()">
@@ -743,7 +733,7 @@
             editingIndex = null;
             clearPopupFields();
             const titleEl = document.getElementById('popupTitle');
-            if (titleEl) titleEl.textContent = 'បន្ថែមព័ត៌មានឃ្លាំងសន្និធិ';
+            if (titleEl) titleEl.textContent = 'យថាប្រភេទនិងបរិមាណថ្នាំកសិកម្មដែលស្នើសុំការផ្គត់ផ្គង់ចែកចាយ';
 
             const popup = document.getElementById('fertilizerPopup');
             popup.classList.remove('popup-hidden');
