@@ -527,126 +527,60 @@
     </div>
 
     <!-- Popup for Add/Edit/View -->
-    <div id="fertilizerPopup" class="popup-hidden">
-        <div class="popup-backdrop">
-            <div class="popup-content">
+  <div id="fertilizerModal" class="modal-overlay hidden">
+    <div class="modal">
+        <div class="modal-header">
+            <h3>បញ្ចូលព័ត៌មានជីកសិកម្ម</h3>
+            <button type="button" class="modal-close-btn" onclick="closeFertilizerModal()">×</button>
+        </div>
 
-                <div class="popup-title" id="popupTitle">បន្ថែមព័ត៌មានឃ្លាំងសន្និធិ</div>
-
-                <div class="popup-form-grid">
-
-                    <!-- Row 1: Warehouse basic info -->
-                    <div class="popup-row">
-                        <div class="form-group">
-                            <label>ឈ្មោះឃ្លាំងសន្និធិ <span class="required">*</span></label>
-                            <input type="text" id="warehouse_name">
-                        </div>
-
-                        <div class="form-group">
-                            <label>ផ្ទៃឃ្លាំងសន្និធិ (m²) <span class="required">*</span></label>
-                            <input type="text" id="warehouse_area">
-                        </div>
-
-                        <div class="form-group">
-                            <label>សមត្ថភាពសន្និធិ (តោន) <span class="required">*</span></label>
-                            <input type="text" id="warehouse_capacity">
-                        </div>
+        <div class="modal-body">
+            <form id="fertilizerForm" onsubmit="event.preventDefault(); saveFertilizerRow();">
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label>យថាប្រភេទជីកសិកម្ម <span class="required">*</span></label>
+                        <input type="text" id="fertType" required>
                     </div>
-
-                    <!-- Address title -->
-                    <h4 style="margin-top: 8px; color:#008000; font-size:15px;">
-                        អាសយដ្ឋាន
-                    </h4>
-
-                    <!-- Row 2: Province, District, Commune -->
-                    <div class="popup-row">
-                        <div class="form-group">
-                            <label>ខេត្ត/រាជធានី <span class="required">*</span></label>
-                            <select id="addr_province">
-                                <option value="">ជ្រើសរើស</option>
-                                <option value="phnom_penh">រាជធានីភ្នំពេញ</option>
-                                <option value="kandal">ខេត្តកណ្ដាល</option>
-                                <option value="kampong_cham">ខេត្តកំពង់ចាម</option>
-                                <option value="other">ផ្សេងៗ</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label>ស្រុក/ខណ្ឌ <span class="required">*</span></label>
-                            <select id="addr_district">
-                                <option value="">ជ្រើសរើស</option>
-                                <option value="chamkarmon">ខណ្ឌចំការមន</option>
-                                <option value="7makara">ខណ្ឌ៧មករา</option>
-                                <option value="other">ផ្សេងៗ</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label>ឃុំ/សង្កាត់ <span class="required">*</span></label>
-                            <select id="addr_commune">
-                                <option value="">ជ្រើសរើស</option>
-                                <option value="toul_tompoung">សង្កាត់ទួលទំពូង</option>
-                                <option value="boeung_keng_kang">សង្កាត់បឹងកេងកង</option>
-                                <option value="other">ផ្សេងៗ</option>
-                            </select>
-                        </div>
+                    <div class="form-group">
+                        <label>ឈ្មោះពាណិជ្ជកម្ម <span class="required">*</span></label>
+                        <input type="text" id="fertTradeName" required>
                     </div>
-
-                    <!-- Row 3: Village, Street, House -->
-                    <div class="popup-row">
-                        <div class="form-group">
-                            <label>ភូមិ <span class="required">*</span></label>
-                            <select id="addr_village">
-                                <option value="">ជ្រើសរើស</option>
-                                <option value="village1">ភូមិ ១</option>
-                                <option value="village2">ភូមិ ២</option>
-                                <option value="other">ផ្សេងៗ</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label>ផ្លូវ</label>
-                            <input type="text" id="addr_street">
-                        </div>
-
-                        <div class="form-group">
-                            <label>ផ្ទះលេខ/អាគារ</label>
-                            <input type="text" id="addr_house_no">
-                        </div>
-                    </div>
-
-                    <!-- Row 3: Village, Street, House -->
-                    <div class="popup-row">
-                        <div class="form-group">
-                            <label>លេខទូរសព្ទ <span class="required">*</span></label>
-                            <input type="text" id="addr_house_no">
-                        </div>
-
-                        <div class="form-group">
-                            <label>លេខទូរសព្ទលើតុ</label>
-                            <input type="text" id="addr_street">
-                        </div>
-
-                        <div class="form-group">
-                            <label>អ៊ីម៉ែល</label>
-                            <input type="text" id="addr_house_no">
-                        </div>
-                    </div>
-
                 </div>
 
-                <div class="popup-actions">
-                    <button class="btn btn-outline-green" type="button" onclick="closeFertilizerPopup()">
-                        បោះបង់
-                    </button>
-                    <button class="btn btn-primary" type="button" onclick="saveFertilizer()">
-                        រក្សាទុក
-                    </button>
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label>លេខបញ្ជិកា <span class="required">*</span></label>
+                        <input type="text" id="fertRegNo" required>
+                    </div>
+                    <div class="form-group">
+                        <label>បរិមាណផ្គត់ផ្គង់ចែកចាយប្រចាំឆ្នាំ <span class="required">*</span></label>
+                        <input type="text" id="fertAnnualQty" placeholder="ឧ. 5,000 តោន" required>
+                    </div>
                 </div>
 
-            </div>
+                <div class="form-row-2">
+                    <div class="form-group">
+                        <label>ក្រុមហ៊ុន <span class="required">*</span></label>
+                        <input type="text" id="fertCompany" required>
+                    </div>
+                    <div class="form-group">
+                        <label>ប្រទេសប្រភពដើម <span class="required">*</span></label>
+                        <input type="text" id="fertOriginCountry" placeholder="ឧ. ថៃ, វៀតណាម, ចិន" required>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-green" onclick="closeFertilizerModal()">
+                បោះបង់
+            </button>
+            <button type="submit" form="fertilizerForm" class="btn btn-primary">
+                រក្សាទុក
+            </button>
         </div>
     </div>
+</div>
 
     <script>
         let fertilizers = []; // actually list of warehouses
