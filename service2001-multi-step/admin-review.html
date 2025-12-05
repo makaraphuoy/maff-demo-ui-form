@@ -3377,7 +3377,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // OPEN EVENTS
     openBtn.addEventListener('click', function () {
         openModal(true);  // show field
-        
+        const modalTitle = document.getElementById("receiver-title");
+        //btnReceiver អ្នកទទួល
+        modalTitle.innerText = `ផ្ទេរទៅកាន់`;
     });
 
     receiverBtn.addEventListener('click', function () {
