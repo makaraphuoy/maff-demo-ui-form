@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="km">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ទម្រង់ចុះឈ្មោះ - ព័ត៌មានពាក្យស្នើសុំ</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@100;300;400;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="service2005.css">
+
+    <style>
+        body {
+            font-family: 'Hanuman', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-size: 15px;
+        }
+
+        /* ==== Checkbox grid in Section 1 ==== */
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+
+        .checkbox-pill-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 6px 4px;
+            border-radius: 6px;
+            background: transparent;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .checkbox-pill-row:hover {
+            background: #f3fff3;
+        }
+
+        .checkbox-pill-row input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #008000;
+        }
+
+        @media (max-width: 768px) {
+            .checkbox-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* ==== Table styles for Section 2 ==== */
+        .fertilizer-table-wrapper {
+            overflow-x: auto;
+        }
+
+        table.fertilizer-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .fertilizer-table thead tr {
+            background: #f3f4f6;
+        }
+
+        .fertilizer-table thead th {
+            border: 1px solid #e5e7eb;
+            padding: 8px;
+            text-align: center;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .fertilizer-table tbody td {
+            border: 1px solid #e5e7eb;
+            padding: 6px 8px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .fertilizer-actions {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-btn svg {
+            width: 18px;
+            height: 18px;
+            stroke: #374151;
+        }
+
+        .icon-btn.delete svg {
+            stroke: #b91c1c;
+        }
+
+        /* Count text */
+        #fertilizerCountWrapper {
+            margin-top: 15px;
+            font-size: 15px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* ==== Popup styles ==== */
+        .popup-hidden {
+            display: none;
+        }
+
+        .popup-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.45);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 50;
+        }
+
+        .popup-content {
+            width: min(960px, 95vw);
+            max-height: 90vh;
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 22px 24px 18px;
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.25);
+            overflow-y: auto;
+        }
+
+        .popup-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #064e3b;
+            margin-bottom: 14px;
+        }
+
+        /* Popup form layout: rows, each row can have up to 3 columns */
+        .popup-form-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 10px;
+        }
+
+        .popup-row {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        @media (max-width: 900px) {
+            .popup-row {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .popup-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .popup-form-grid .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .popup-form-grid .form-group label {
+            margin-bottom: 6px;
+            font-size: 14px;
+            color: #374151;
+        }
+
+        .popup-form-grid .required {
+            color: red;
+            margin-left: 3px;
+        }
+
+        .popup-form-grid input[type="text"],
+        .popup-form-grid select {
+            padding: 10px 14px;
+            border: 1.5px solid #e0e0e0;
+            border-radius: 8px;
+            font-family: 'Hanuman', serif;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            background: #ffffff;
+        }
+
+        .popup-form-grid input[type="text"]:focus,
+        .popup-form-grid select:focus {
+            outline: none;
+            border-color: #008000;
+            box-shadow: 0 0 0 2px rgba(0, 128, 0, 0.1);
+        }
+
+        /* Select arrow */
+        .popup-form-grid select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            padding-right: 32px;
+        }
+
+        .popup-actions {
+            margin-top: 18px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        /* Stepper icon mode */
+        .step-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #16a34a;
+            color: #ffffff;
+        }
+
+        .step-item.active .step-number {
+            background: #16a34a;
+            color: #ffffff;
+        }
+
+        .step-item.completed .step-number {
+            background: #16a34a;
+            color: #ffffff;
+        }
+
+        .step-number svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+        }
+
+        .step-texts {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .step-next-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            opacity: 0.7;
+        }
+
+        .step-next-icon svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+        }
+
+        .step-item:last-child .step-next-icon {
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Page header -->
+        <div class="page-header-soft">
+            <div class="page-title">
+                ២. វិញ្ញាបនបត្របញ្ជាក់ការចុះបញ្ជីឃ្លាំងសន្និធិជីកសិកម្ម
+            </div>
+
+            <div class="page-home">
+                <a href="home.html" class="home-link">
+                    <img class="home-icon" src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="home">
+                    ទំព័រដើម
+                </a>
+            </div>
+        </div>
+
+        <!-- Stepper (multi-page) -->
+        <div class="stepper">
+
+            <a href="service2005-step1.html" class="step-item completed">
+                <div class="step-number">
+                    <!-- user icon -->
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="8" r="3.5" stroke-width="1.8" />
+                        <path d="M5 19c1.5-3 3.9-4.5 7-4.5s5.5 1.5 7 4.5" stroke-width="1.8" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div class="step-texts">
+                    <span class="step-label-main">ព័ត៌មានអ្នកឈរឈ្មោះ</span>
+                </div>
+                <div class="step-next-icon">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M9 6l6 6-6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </a>
+
+            <a href="service2005-step2.html" class="step-item active">
+                <div class="step-number">
+                    <!-- document icon -->
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M7 3h7l5 5v13H7z" stroke-width="1.8" stroke-linejoin="round" />
+                        <path d="M14 3v5h5" stroke-width="1.8" stroke-linejoin="round" />
+                        <path d="M9 13h6M9 16h4" stroke-width="1.6" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div class="step-texts">
+                    <span class="step-label-main">ព័ត៌មានពាក្យស្នើសុំ</span>
+                </div>
+                <div class="step-next-icon">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M9 6l6 6-6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </a>
+
+            <a href="service2005-step3.html" class="step-item">
+                <div class="step-number">
+                    <!-- paperclip icon -->
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M8.5 8.75l5.25-5.25a3.75 3.75 0 1 1 5.3 5.3l-7.07 7.07a4.25 4.25 0 1 1-6.01-6.01L12 4"
+                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="step-texts">
+                    <span class="step-label-main">ឯកសារភ្ជាប់</span>
+                </div>
+                <div class="step-next-icon">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M9 6l6 6-6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </a>
+
+            <a href="service2005-step4.html" class="step-item">
+                <div class="step-number">
+                    <!-- eye (review) icon -->
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="12" cy="12" r="3" stroke-width="1.8" />
+                    </svg>
+                </div>
+                <div class="step-texts">
+                    <span class="step-label-main">ពិនិត្យឡើងវិញ</span>
+                </div>
+                <div class="step-next-icon">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M9 6l6 6-6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </a>
+
+            <a href="service2005-step5.html" class="step-item">
+                <div class="step-number">
+                    <!-- credit card icon -->
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.8" />
+                        <path d="M3 9h18" stroke-width="1.8" />
+                        <path d="M7 14h4" stroke-width="1.8" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div class="step-texts">
+                    <span class="step-label-main">បង់ប្រាក់</span>
+                </div>
+                <div class="step-next-icon">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M9 6l6 6-6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </a>
+        </div>
+
+        <!-- STEP 2 CONTENT -->
+        <div class="section">
+            <div class="section-header">
+                ១. ព័ត៌មានពាក្យស្នើសុំ
+            </div>
+            <div class="section-content" style="max-height:none;">
+                <div class="form-container">
+
+                    <!-- Sub-section 1 -->
+                    <h3 style="color:#008000; font-size:16px; margin-bottom:12px;">
+                        ១. គោលបំណងនៃការស្នើសុំ
+                    </h3>
+
+                    <div class="checkbox-grid">
+
+                        <label class="checkbox-pill-row">
+                            <input type="checkbox" name="purpose[]" value="registration">
+                            <span>នាំចូលនាំចេញ</span>
+                        </label>
+
+                        <label class="checkbox-pill-row">
+                            <input type="checkbox" name="purpose[]" value="analysis">
+                            <span>ការលាយផ្សំ</span>
+                        </label>
+
+                        <label class="checkbox-pill-row">
+                            <input type="checkbox" name="purpose[]" value="bioeffectiveness">
+                            <span>ការវេចខ្ចប់ជាថ្មី</span>
+                        </label>
+
+                        <label class="checkbox-pill-row">
+                            <input type="checkbox" name="purpose[]" value="commercial">
+                            <span>ការផ្គត់ផ្គង់ចែកចាយ</span>
+                        </label>
+
+                        <label class="checkbox-pill-row">
+                            <input type="checkbox" name="purpose[]" value="non_commercial">
+                            <span style="color: #b91c1c;">ការបន្តសុពលភាពវិញ្ញាបនបត្រ</span>
+                        </label>
+
+                        <label class="checkbox-pill-row">
+                            <input type="checkbox" name="purpose[]" value="new_register">
+                            <span style="color: #b91c1c;">ការផ្ទេរសិទ្ធិលើវិញ្ញាបនបត្រ</span>
+                        </label>
+
+                        <label class="checkbox-pill-row">
+                            <input type="checkbox" name="purpose[]" value="renew">
+                            <span style="color: #b91c1c;">ការប្រើប្រាស់ដោយផ្ទាល់</span>
+                        </label>
+
+                        <label class="checkbox-pill-row">
+                            <input type="checkbox" name="purpose[]" value="other">
+                            <span style="color: #b91c1c;">គោលបំណងផ្សេងទៀត</span>
+                        </label>
+
+                    </div>
+
+                    <hr style="border:none; border-top:1px solid #e5e7eb; margin:20px 0;">
+
+                    <!-- Sub-section 2 -->
+                    <h3 style="color:#008000; font-size:16px; margin-bottom:12px;">
+                        ២. ទីតាំងឃ្លាំងសន្និថ្នាំកសិកម្ម
+                    </h3>
+
+                    <!-- Add button -->
+                    <div style="display:flex; justify-content:flex-end; margin-bottom:10px;">
+                        <button type="button" class="btn btn-primary"
+                            style="display:flex; align-items:center; gap:6px; border-radius:8px; padding:5px 14px;"
+                            onclick="openFertilizerPopupForAdd()">
+                            <svg viewBox="0 0 24 24" width="18" height="18">
+                                <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" fill="none" />
+                            </svg>
+                            បន្ថែម
+                        </button>
+                    </div>
+
+                    <!-- Table -->
+                    <div class="fertilizer-table-wrapper">
+                        <table class="fertilizer-table">
+                            <thead>
+                                <tr>
+                                    <th>ល.រ.</th>
+                                    <th>ឈ្មោះឃ្លាំងសន្និធិ</th>
+                                    <th>អាសយដ្ឋាន</th>
+                                    <th>ផ្ទៃឃ្លាំងសន្និធិ</th>
+                                    <th>សមត្ថភាពសន្និធិ</th>
+                                    <th>សកម្មភាព</th>
+                                </tr>
+                            </thead>
+                            <tbody id="fertilizerTableBody">
+                                <!-- dynamic rows -->
+                            </tbody>
+                        </table>
+
+                        <div id="fertilizerCountWrapper">
+                            ចំនួនសរុប: <span id="fertilizerCount">0</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom navigation -->
+        <div class="step-nav">
+            <!-- Left -->
+            <button class="btn btn-outline-green" type="button">
+                <span class="btn-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M5 3h14v18H5z" fill="none" stroke="currentColor" stroke-width="1.6" />
+                        <path d="M5 9h14" stroke="currentColor" stroke-width="1.6" />
+                        <path d="M9 3v6" stroke="currentColor" stroke-width="1.6" />
+                        <rect x="9" y="13" width="6" height="5" stroke="currentColor" stroke-width="1.6" fill="none" />
+                    </svg>
+                </span>
+                រក្សាទុក & ចាកចេញ
+            </button>
+
+            <!-- Right buttons -->
+            <div class="step-right-group">
+                <a href="service2005-step1.html" class="btn btn-outline-green">
+                    <span class="btn-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" fill="none" />
+                        </svg>
+                    </span>
+                    ត្រឡប់ក្រោយ
+                </a>
+
+                <a href="service2005-step3.html" class="btn btn-primary">
+                    បន្ទាប់
+                    <span class="btn-icon-right">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" />
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Popup for Add/Edit/View -->
+    <div id="fertilizerPopup" class="popup-hidden">
+        <div class="popup-backdrop">
+            <div class="popup-content">
+
+                <div class="popup-title" id="popupTitle">បន្ថែមព័ត៌មានឃ្លាំងសន្និធិ</div>
+
+                <div class="popup-form-grid">
+
+                    <!-- Row 1: Warehouse basic info -->
+                    <div class="popup-row">
+                        <div class="form-group">
+                            <label>ឈ្មោះឃ្លាំងសន្និធិ <span class="required">*</span></label>
+                            <input type="text" id="warehouse_name">
+                        </div>
+
+                        <div class="form-group">
+                            <label>ផ្ទៃឃ្លាំងសន្និធិ (m²) <span class="required">*</span></label>
+                            <input type="text" id="warehouse_area">
+                        </div>
+
+                        <div class="form-group">
+                            <label>សមត្ថភាពសន្និធិ (តោន) <span class="required">*</span></label>
+                            <input type="text" id="warehouse_capacity">
+                        </div>
+                    </div>
+
+                    <!-- Address title -->
+                    <h4 style="margin-top: 8px; color:#008000; font-size:15px;">
+                        អាសយដ្ឋាន
+                    </h4>
+
+                    <!-- Row 2: Province, District, Commune -->
+                    <div class="popup-row">
+                        <div class="form-group">
+                            <label>ខេត្ត/រាជធានី <span class="required">*</span></label>
+                            <select id="addr_province">
+                                <option value="">ជ្រើសរើស</option>
+                                <option value="phnom_penh">រាជធានីភ្នំពេញ</option>
+                                <option value="kandal">ខេត្តកណ្ដាល</option>
+                                <option value="kampong_cham">ខេត្តកំពង់ចាម</option>
+                                <option value="other">ផ្សេងៗ</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>ស្រុក/ខណ្ឌ <span class="required">*</span></label>
+                            <select id="addr_district">
+                                <option value="">ជ្រើសរើស</option>
+                                <option value="chamkarmon">ខណ្ឌចំការមន</option>
+                                <option value="7makara">ខណ្ឌ៧មករา</option>
+                                <option value="other">ផ្សេងៗ</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>ឃុំ/សង្កាត់ <span class="required">*</span></label>
+                            <select id="addr_commune">
+                                <option value="">ជ្រើសរើស</option>
+                                <option value="toul_tompoung">សង្កាត់ទួលទំពូង</option>
+                                <option value="boeung_keng_kang">សង្កាត់បឹងកេងកង</option>
+                                <option value="other">ផ្សេងៗ</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Row 3: Village, Street, House -->
+                    <div class="popup-row">
+                        <div class="form-group">
+                            <label>ភូមិ <span class="required">*</span></label>
+                            <select id="addr_village">
+                                <option value="">ជ្រើសរើស</option>
+                                <option value="village1">ភូមិ ១</option>
+                                <option value="village2">ភូមិ ២</option>
+                                <option value="other">ផ្សេងៗ</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>ផ្លូវ</label>
+                            <input type="text" id="addr_street">
+                        </div>
+
+                        <div class="form-group">
+                            <label>ផ្ទះលេខ/អាគារ</label>
+                            <input type="text" id="addr_house_no">
+                        </div>
+                    </div>
+
+                    <!-- Row 3: Village, Street, House -->
+                    <div class="popup-row">
+                        <div class="form-group">
+                            <label>លេខទូរសព្ទ <span class="required">*</span></label>
+                            <input type="text" id="addr_house_no">
+                        </div>
+
+                        <div class="form-group">
+                            <label>លេខទូរសព្ទលើតុ</label>
+                            <input type="text" id="addr_street">
+                        </div>
+
+                        <div class="form-group">
+                            <label>អ៊ីម៉ែល</label>
+                            <input type="text" id="addr_house_no">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="popup-actions">
+                    <button class="btn btn-outline-green" type="button" onclick="closeFertilizerPopup()">
+                        បោះបង់
+                    </button>
+                    <button class="btn btn-primary" type="button" onclick="saveFertilizer()">
+                        រក្សាទុក
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let fertilizers = []; // actually list of warehouses
+        let editingIndex = null;
+
+        function updateFertilizerCount() {
+            const countEl = document.getElementById('fertilizerCount');
+            if (countEl) countEl.textContent = fertilizers.length;
+        }
+
+        function renderFertilizerTable() {
+            const tbody = document.getElementById('fertilizerTableBody');
+            if (!tbody) return;
+
+            tbody.innerHTML = '';
+
+            fertilizers.forEach((item, index) => {
+                const tr = document.createElement('tr');
+
+                tr.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${item.name}</td>
+                    <td>${item.area}</td>
+                    <td>${item.capacity}</td>
+                    <td>${item.addressText}</td>
+                    <td>
+                        <div class="fertilizer-actions">
+                            <button type="button" class="icon-btn" title="មើល" onclick="viewFertilizer(${index})">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z" stroke="currentColor" stroke-width="1.6"/>
+                                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/>
+                                </svg>
+                            </button>
+                            <button type="button" class="icon-btn" title="កែប្រែ" onclick="editFertilizer(${index})">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                    <path d="M4 20h4l10-10-4-4L4 16v4Z" stroke="currentColor" stroke-width="1.6"/>
+                                    <path d="M14 6l4 4" stroke="currentColor" stroke-width="1.6"/>
+                                </svg>
+                            </button>
+                            <button type="button" class="icon-btn delete" title="លុប" onclick="deleteFertilizer(${index})">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                    <path d="M6 7h12" stroke="currentColor" stroke-width="1.6"/>
+                                    <path d="M10 11v6" stroke="currentColor" stroke-width="1.6"/>
+                                    <path d="M14 11v6" stroke="currentColor" stroke-width="1.6"/>
+                                    <path d="M9 7l1-2h4l1 2" stroke="currentColor" stroke-width="1.6"/>
+                                    <path d="M7 7v11a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V7" stroke="currentColor" stroke-width="1.6"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </td>
+                `;
+
+                tbody.appendChild(tr);
+            });
+
+            updateFertilizerCount();
+        }
+
+        function clearPopupFields() {
+            const ids = [
+                'warehouse_name',
+                'warehouse_area',
+                'warehouse_capacity',
+                'addr_province',
+                'addr_district',
+                'addr_commune',
+                'addr_village',
+                'addr_street',
+                'addr_house_no'
+            ];
+
+            ids.forEach(id => {
+                const el = document.getElementById(id);
+                if (!el) return;
+                if (el.tagName.toLowerCase() === 'select') {
+                    el.value = '';
+                } else {
+                    el.value = '';
+                }
+            });
+        }
+
+        function openFertilizerPopupForAdd() {
+            editingIndex = null;
+            clearPopupFields();
+            const titleEl = document.getElementById('popupTitle');
+            if (titleEl) titleEl.textContent = 'បន្ថែមព័ត៌មានឃ្លាំងសន្និធិ';
+
+            const popup = document.getElementById('fertilizerPopup');
+            popup.classList.remove('popup-hidden');
+        }
+
+        function openFertilizerPopupForEdit(index) {
+            editingIndex = index;
+            const data = fertilizers[index];
+
+            const titleEl = document.getElementById('popupTitle');
+            if (titleEl) titleEl.textContent = 'កែប្រែព័ត៌មានឃ្លាំងសន្និធិ';
+
+            document.getElementById('warehouse_name').value = data.name || '';
+            document.getElementById('warehouse_area').value = data.area || '';
+            document.getElementById('warehouse_capacity').value = data.capacity || '';
+
+            document.getElementById('addr_province').value = data.provinceValue || '';
+            document.getElementById('addr_district').value = data.districtValue || '';
+            document.getElementById('addr_commune').value = data.communeValue || '';
+            document.getElementById('addr_village').value = data.villageValue || '';
+            document.getElementById('addr_street').value = data.street || '';
+            document.getElementById('addr_house_no').value = data.houseNo || '';
+
+            const popup = document.getElementById('fertilizerPopup');
+            popup.classList.remove('popup-hidden');
+        }
+
+        function closeFertilizerPopup() {
+            const popup = document.getElementById('fertilizerPopup');
+            popup.classList.add('popup-hidden');
+        }
+
+        function saveFertilizer() {
+            const nameVal = document.getElementById('warehouse_name').value.trim();
+            const areaVal = document.getElementById('warehouse_area').value.trim();
+            const capacityVal = document.getElementById('warehouse_capacity').value.trim();
+
+            const provinceSel = document.getElementById('addr_province');
+            const districtSel = document.getElementById('addr_district');
+            const communeSel = document.getElementById('addr_commune');
+            const villageSel = document.getElementById('addr_village');
+            const streetVal = document.getElementById('addr_street').value.trim();
+            const houseNoVal = document.getElementById('addr_house_no').value.trim();
+
+            const provinceVal = provinceSel.value;
+            const districtVal = districtSel.value;
+            const communeVal = communeSel.value;
+            const villageVal = villageSel.value;
+
+            if (
+                !nameVal ||
+                !areaVal ||
+                !capacityVal ||
+                !provinceVal ||
+                !districtVal ||
+                !communeVal ||
+                !villageVal
+            ) {
+                alert('សូមបញ្ចូលព័ត៌មានដែលមានសញ្ញា * មុនពេលរក្សាទុក។');
+                return;
+            }
+
+            const provinceText = provinceSel.options[provinceSel.selectedIndex].text;
+            const districtText = districtSel.options[districtSel.selectedIndex].text;
+            const communeText = communeSel.options[communeSel.selectedIndex].text;
+            const villageText = villageSel.options[villageSel.selectedIndex].text;
+
+            // Concatenate address: ផ្ទះលេខ/អាគារ ផ្លូវ ភូមិ ឃុំ/សង្កាត់ ស្រុក/ខណ្ឌ ខេត្ត/រាជធានី
+            const addressParts = [];
+
+            if (houseNoVal) {
+                addressParts.push(' ' + houseNoVal);
+            }
+            if (streetVal) {
+                addressParts.push(' ' + streetVal);
+            }
+            if (villageText) {
+                addressParts.push(' ' + villageText);
+            }
+            if (communeText) {
+                addressParts.push(' ' + communeText);
+            }
+            if (districtText) {
+                addressParts.push(' ' + districtText);
+            }
+            if (provinceText) {
+                addressParts.push(' ' + provinceText);
+            }
+
+            const addressText = addressParts.join(' , ');
+
+            const obj = {
+                name: nameVal,
+                area: areaVal,
+                capacity: capacityVal,
+                provinceValue: provinceVal,
+                provinceText,
+                districtValue: districtVal,
+                districtText,
+                communeValue: communeVal,
+                communeText,
+                villageValue: villageVal,
+                villageText,
+                street: streetVal,
+                houseNo: houseNoVal,
+                addressText
+            };
+
+            if (editingIndex === null) {
+                fertilizers.push(obj);
+            } else {
+                fertilizers[editingIndex] = obj;
+            }
+
+            renderFertilizerTable();
+            closeFertilizerPopup();
+        }
+
+        function deleteFertilizer(index) {
+            if (!confirm('តើអ្នកប៉ុនប៉ងលុបទិន្នន័យនេះមែនទេ?')) return;
+            fertilizers.splice(index, 1);
+            renderFertilizerTable();
+        }
+
+        function editFertilizer(index) {
+            openFertilizerPopupForEdit(index);
+        }
+
+        function viewFertilizer(index) {
+            // same as edit
+            openFertilizerPopupForEdit(index);
+        }
+    </script>
+</body>
+
+</html>
