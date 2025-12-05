@@ -3023,7 +3023,7 @@ textarea.form-input {
     <div class="modal-card">
         <!-- Header -->
         <div class="modal-header">
-            <div class="modal-title">ផ្ទេរទៅកាន់</div>
+            <div class="modal-title" id="receiver-title">ផ្ទេរទៅកាន់</div>
             <button type="button" class="modal-close-btn" id="btnCloseTransfer">
                 <!-- X icon -->
                 <svg viewBox="0 0 24 24" fill="none">
@@ -3377,10 +3377,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // OPEN EVENTS
     openBtn.addEventListener('click', function () {
         openModal(true);  // show field
+        
     });
 
     receiverBtn.addEventListener('click', function () {
         openModal(false); // hide field
+        const modalTitle = document.getElementById("receiver-title");
+        //btnReceiver អ្នកទទួល
+        modalTitle.innerText = `អ្នកទទួល`;
     });
 
     returnBtn.addEventListener('click', function () {
