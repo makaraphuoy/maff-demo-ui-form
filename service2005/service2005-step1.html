@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>វិញ្ញាបនបត្របញ្ជាក់បញ្ជីកសិកម្ម - ជំហាន 1</title>
+    <title>លិខិតអនុញ្ញាតផ្គត់ផ្គង់ចែកចាយជីកសិកម្ម</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@100;300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="service2005.css">
+    <link rel="stylesheet" href="service2001.css">
 
     <style>
         /* Stepper icon mode overrides */
@@ -207,6 +207,75 @@
         .doc-hidden-input {
             display: none;
         }
+
+        .review-card {
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            background: #ffffff;
+            padding: 16px 18px;
+            margin-bottom: 18px;
+        }
+        /* === NEW row/column 12-grid for key–value === */
+        .kv-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -8px 6px;
+        }
+        .kv-col {
+            padding: 0 8px;
+            margin-bottom: 8px;
+            box-sizing: border-box;
+        }
+
+        .kv-col-2 {
+            flex: 0 0 16.6667%;
+            max-width: 16.6667%;
+        }
+        .kv-col-3 {
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+        .kv-col-4 {
+            flex: 0 0 33.3333%;
+            max-width: 33.3333%;
+        }
+        .kv-col-6 {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+        .kv-col-12 {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        .kv-label {
+            color: #23272e;
+            font-size: 15px;
+            display: block;
+        }
+        .kv-value {
+            color: #111827;
+            font-weight: 600;
+            font-size: 15px;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .kv-col-2,
+            .kv-col-3,
+            .kv-col-4,
+            .kv-col-6,
+            .kv-col-12 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+         .subsection-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #047857;
+            margin: 10px 0 8px;
+        }
     </style>
 
 </head>
@@ -362,7 +431,7 @@
 
                 <div id="camdxCompanyField" class="form-group full-width">
                     <label>ក្រុមហ៊ុន</label>
-                    <select>
+                    <select id="companySelect">
                         <option value="">ជ្រើសរើស</option>
                         <option value="company1">ក្រុមហ៊ុន ABC</option>
                         <option value="company2">ក្រុមហ៊ុន XYZ</option>
@@ -370,91 +439,205 @@
                     </select>
                 </div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>លេខចុះបញ្ជីអាជីវកម្ម <span class="required">*</span></label>
-                        <input type="text">
+
+                <div id="camdxCompanyLabel" class="review-card form-group full-width hidden">
+
+                    <div class="form-row" style="margin-bottom: 20px;">
+                        <div class="form-group">
+                            <label>លេខចុះបញ្ជីអាជីវកម្ម <span class="required">*</span></label>
+                            <input type="text" value="000123456-2025" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label>លេខអាករលើតម្លៃបន្ថែម(អតប) <span class="required">*</span></label>
+                            <input type="text">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>លេខអាករលើតម្លៃបន្ថែម(អតប) <span class="required">*</span></label>
-                        <input type="text">
+
+                    <!-- ===== LEGAL ENTITY (DEFAULT) ===== -->
+                    <div id="applicantLegal">
+
+                
+                        <!-- Row: company names (3 + 3 + 3 + 3) -->
+                        <div class="kv-row">
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">នាមករណ៍ក្រុមហ៊ុន (ខ្មែរ)៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">ក្រុមហ៊ុន អេកូជី កម្ពុជា ឯ.ក</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">នាមករណ៍ក្រុមហ៊ុន (ឡាតាំង)៖</span>
+                            </div>
+                            <div class="kv-col kv-col-3">
+                                <span class="kv-value">ECO FERT CAMBODIA Co., Ltd.</span>
+                            </div>
+                        </div>
+
+                        <!-- Address title -->
+                        <div class="subsection-title" style="margin-top:10px;">អាសយដ្ឋានបច្ចុប្បន្ន</div>
+
+                        <!-- Row: province / district / commune (2 + 2 + 2 + 2 + 2 + 2) -->
+                        <div class="kv-row">
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">ខេត្ត/រាជធានី៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">ភ្នំពេញ</span>
+                            </div>
+
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">ស្រុក/ខណ្ឌ៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">ចំការមន</span>
+                            </div>
+
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">ឃុំ/សង្កាត់៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">ទួលទឹកផុស</span>
+                            </div>
+                        </div>
+
+                        <!-- Row: village / street / house (2 + 2 + 2 + 2 + 2 + 2) -->
+                        <div class="kv-row">
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">ភូមិ៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">៥</span>
+                            </div>
+
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">ផ្លូវ៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">271</span>
+                            </div>
+
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">ផ្ទះលេខ/អាគារ៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">12B</span>
+                            </div>
+                        </div>
+
+                        <!-- Row: phone / email (3 + 3 + 3 + 3) -->
+                        <div class="kv-row">
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">លេខទូរសព្ទ៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">012 345 678</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">លេខទូរសព្ទលើតុ៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">012 345 678</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">អ៊ីម៉ែល៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">info@ecofert.com</span>
+                            </div>
+                        </div>
                     </div>
+
+                 
                 </div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>នាមករណ៍ក្រុមហ៊ុន (ខ្មែរ) <span class="required">*</span></label>
-                        <input type="text">
-                    </div>
-                    <div class="form-group">
-                        <label>នាមករណ៍ក្រុមហ៊ុន (ឡាតាំង) <span class="required">*</span></label>
-                        <input type="text">
-                    </div>
-                </div>
 
-                <div class="form-group full-width" style="margin-top: 20px;">
-                    <h3 style="color: #008000; margin-bottom: 15px; font-size: 16px;">អាសយដ្ឋានបច្ចុប្បន្ន</h3>
-                </div>
+                <div id="camdxCompanyInput" class="form-group full-width hidden">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>លេខចុះបញ្ជីអាជីវកម្ម <span class="required">*</span></label>
+                            <input type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>លេខអាករលើតម្លៃបន្ថែម(អតប) <span class="required">*</span></label>
+                            <input type="text">
+                        </div>
+                    </div>
 
-                <div style="grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-                    <div class="form-group">
-                        <label>ខេត្ត/រាជធានី <span class="required">*</span></label>
-                        <select>
-                            <option value="">ជ្រើសរើស</option>
-                            <option value="pp">ភ្នំពេញ</option>
-                            <option value="sr">សៀមរាប</option>
-                            <option value="bb">បាត់ដំបង</option>
-                        </select>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>នាមករណ៍ក្រុមហ៊ុន (ខ្មែរ) <span class="required">*</span></label>
+                            <input type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>នាមករណ៍ក្រុមហ៊ុន (ឡាតាំង) <span class="required">*</span></label>
+                            <input type="text">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>ស្រុក/ខណ្ឌ <span class="required">*</span></label>
-                        <select>
-                            <option value="">ជ្រើសរើស</option>
-                            <option value="dk">ដូនពេញ</option>
-                            <option value="cm">ចំការមន</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>ឃុំ/សង្កាត់ <span class="required">*</span></label>
-                        <select>
-                            <option value="">ជ្រើសរើស</option>
-                            <option value="k1">ឃុំ១</option>
-                            <option value="k2">ឃុំ២</option>
-                        </select>
-                    </div>
-                </div>
 
-                <div style="grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px;">
-                    <div class="form-group">
-                        <label>ភូមិ <span class="required">*</span></label>
-                        <select>
-                            <option value="">ជ្រើសរើស</option>
-                            <option value="v1">ភូមិ១</option>
-                            <option value="v2">ភូមិ២</option>
-                        </select>
+                    <div class="form-group full-width" style="margin-top: 20px;">
+                        <h3 style="color: #008000; margin-bottom: 15px; font-size: 16px;">អាសយដ្ឋានបច្ចុប្បន្ន</h3>
                     </div>
-                    <div class="form-group">
-                        <label>ផ្លូវ</label>
-                        <input type="text">
-                    </div>
-                    <div class="form-group">
-                        <label>ផ្ទះលេខ/អាគារ</label>
-                        <input type="text">
-                    </div>
-                </div>
 
-                <div style="grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px;">
-                    <div class="form-group">
-                        <label>លេខទូរសព្ទ <span class="required">*</span></label>
-                        <input type="text" placeholder="012 345 678">
+                    <div style="grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                        <div class="form-group">
+                            <label>ខេត្ត/រាជធានី <span class="required">*</span></label>
+                            <select>
+                                <option value="">ជ្រើសរើស</option>
+                                <option value="pp">ភ្នំពេញ</option>
+                                <option value="sr">សៀមរាប</option>
+                                <option value="bb">បាត់ដំបង</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>ស្រុក/ខណ្ឌ <span class="required">*</span></label>
+                            <select>
+                                <option value="">ជ្រើសរើស</option>
+                                <option value="dk">ដូនពេញ</option>
+                                <option value="cm">ចំការមន</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>ឃុំ/សង្កាត់ <span class="required">*</span></label>
+                            <select>
+                                <option value="">ជ្រើសរើស</option>
+                                <option value="k1">ឃុំ១</option>
+                                <option value="k2">ឃុំ២</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>ទូរស័ព្ទលើតុ</label>
-                        <input type="text" placeholder="023 123 456">
+
+                    <div style="grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px;">
+                        <div class="form-group">
+                            <label>ភូមិ <span class="required">*</span></label>
+                            <select>
+                                <option value="">ជ្រើសរើស</option>
+                                <option value="v1">ភូមិ១</option>
+                                <option value="v2">ភូមិ២</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>ផ្លូវ</label>
+                            <input type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>ផ្ទះលេខ/អាគារ</label>
+                            <input type="text">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>អ៊ីម៉ែល <span class="required">*</span></label>
-                        <input type="text" placeholder="example@email.com">
+
+                    <div style="grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px;">
+                        <div class="form-group">
+                            <label>លេខទូរសព្ទ <span class="required">*</span></label>
+                            <input type="text" placeholder="012 345 678">
+                        </div>
+                        <div class="form-group">
+                            <label>ទូរស័ព្ទលើតុ</label>
+                            <input type="text" placeholder="023 123 456">
+                        </div>
+                        <div class="form-group">
+                            <label>អ៊ីម៉ែល <span class="required">*</span></label>
+                            <input type="text" placeholder="example@email.com">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -741,16 +924,46 @@
             handleSelfApplicantToggle();
         }
 
+        document.getElementById("companySelect").addEventListener("change", function() {
+            const selectedValue = this.value;
+            console.log("Selected company:", selectedValue);
+
+            // Your action here
+            // Example: show popup, load data, call API...
+            const camdxCompanyLabel = document.getElementById('camdxCompanyLabel');
+            camdxCompanyLabel.classList.remove('hidden');
+
+        });
+
+        function resetCompany() {
+            document.getElementById("companySelect").value = "";
+        }
+
         function toggleCamdxCompany() {
             const camdxCompanyField = document.getElementById('camdxCompanyField');
             const isCamdxYes = document.getElementById('camdx_yes') && document.getElementById('camdx_yes').checked;
+
+          
+
+            const camdxCompanyInput = document.getElementById('camdxCompanyInput');
+             const camdxCompanyLabel = document.getElementById('camdxCompanyLabel');
+
+            
 
             if (!camdxCompanyField) return;
 
             if (isCamdxYes) {
                 camdxCompanyField.classList.remove('hidden');
+
+                camdxCompanyInput.classList.add('hidden');
             } else {
                 camdxCompanyField.classList.add('hidden');
+
+                 camdxCompanyInput.classList.remove('hidden');
+
+                  camdxCompanyLabel.classList.add('hidden');
+
+                    document.getElementById("companySelect").value = "";
             }
         }
 
