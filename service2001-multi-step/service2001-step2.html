@@ -213,6 +213,7 @@
         padding-right: 32px;
     }
 
+        .re-register-hidden{ display: none; }
 
         @media (max-width: 900px) {
             .popup-form-grid {
@@ -452,78 +453,79 @@
 
                     <!-- Sub-section 1 -->
                     <h3 style="color:#008000; font-size:16px; margin-bottom:12px;">
-                        ១. គោលបំណងនិងលក្ខណៈនៃសំណើ
+                        ១. គោលបំណង
                     </h3>
 
                     <div class="checkbox-grid">
 
                         <label class="checkbox-pill-row">
-                            <input type="checkbox" name="purpose[]" value="registration">
-                            <span>ការចុះបញ្ជី</span>
-                        </label>
-
-                        <label class="checkbox-pill-row">
-                            <input type="checkbox" name="purpose[]" value="analysis">
-                            <span>ការធ្វើវិភាគ</span>
-                        </label>
-
-                        <label class="checkbox-pill-row">
-                            <input type="checkbox" name="purpose[]" value="bioeffectiveness">
-                            <span>ការសាកល្បងជីវប្រសិទ្ធភាព</span>
-                        </label>
-
-                        <label class="checkbox-pill-row">
-                            <input type="checkbox" name="purpose[]" value="commercial">
+                            <input type="radio" name="purpose[]" value="commercial">
                             <span>គោលបំណងពាណិជ្ជកម្ម</span>
                         </label>
 
                         <label class="checkbox-pill-row">
-                            <input type="checkbox" name="purpose[]" value="non_commercial">
+                            <input type="radio" name="purpose[]" value="non_commercial">
                             <span>គោលបំណងមិនពាណិជ្ជកម្ម</span>
-                        </label>
-
-                        <label class="checkbox-pill-row">
-                            <input type="checkbox" name="purpose[]" value="new_register">
-                            <span>ចុះបញ្ជីថ្មី</span>
-                        </label>
-
-                        <label class="checkbox-pill-row">
-                            <input type="checkbox" name="purpose[]" value="renew">
-                            <span>បន្តចុះបញ្ជីជាថ្មី</span>
-                        </label>
-
-                        <label class="checkbox-pill-row">
-                            <input type="checkbox" name="purpose[]" value="other">
-                            <span>ផ្សេងៗ</span>
-                            <input 
-                                type="text"
-                                placeholder="សូមបញ្ជាក់"
-                                style="flex:1; padding:6px 10px; border:1px solid #d1d5db; border-radius:6px; font-family:'Hanuman',serif; font-size:14px;"
-                            >
                         </label>
 
                     </div>
 
                     <hr style="border:none; border-top:1px solid #e5e7eb; margin:20px 0;">
 
-                    <!-- Sub-section 2 -->
                     <h3 style="color:#008000; font-size:16px; margin-bottom:12px;">
-                        ២. យថាប្រភេទជីកសិកម្មដែលស្នើសុំការចុះបញ្ជី
+                        ២. លក្ខណនៃសំណើ
                     </h3>
 
-                    <!-- Add button -->
-                    <div style="display:flex; justify-content:flex-end; margin-bottom:10px;">
-                        <button 
-                            type="button" 
-                            class="btn btn-primary" 
-                            style="display:flex; align-items:center; gap:6px; border-radius:8px; padding:5px 14px;"
-                            onclick="openFertilizerPopupForAdd()">
-                            <svg viewBox="0 0 24 24" width="18" height="18">
-                                <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" fill="none"/>
-                            </svg>
-                            បន្ថែម
-                        </button>
+                    <div class="checkbox-grid">
+
+                        <label class="checkbox-pill-row">
+                            <input type="radio" name="purpose[]" value="registration">
+                            <span>ការចុះបញ្ជី</span>
+                        </label>
+
+
+
+                        <label class="checkbox-pill-row">
+                            <input type="radio" name="purpose[]" value="new_register">
+                            <span>ចុះបញ្ជីជាថ្មី</span>
+                        </label>
+
                     </div>
+
+                    <div id="newRegisterInput" class="hidden">
+
+                        <div class="popup-row">
+                            <div class="form-group" style="margin-top: 20px">
+                                <label>
+                                    លេខវិញ្ញាបនបត្របញ្ជាក់បញ្ជីកសិកម្ម
+                                    <span class="required">*</span>
+                                </label>
+
+                                <div class="input-group">
+                                    <input type="text" id="fert_type">
+                                    <button type="button" class="btn-search" id="searchFertBtn" style="padding: 6px 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;">ស្វែងរក</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <hr style="border:none; border-top:1px solid #e5e7eb; margin:20px 0;">
+
+
+                    <!-- Sub-section 2 -->
+                    <h3 style="color:#008000; font-size:16px; margin-bottom:12px;">
+                        ៣. យថាប្រភេទជីកសិកម្មដែលស្នើសុំការចុះបញ្ជី
+                    </h3>
+
+
+
 
                     <!-- Table -->
                     <div class="fertilizer-table-wrapper">
@@ -536,6 +538,7 @@
                                     <th>ឈ្មោះពាណិជ្ជកម្ម</th>
                                     <th>ប្រទេសប្រភពដើមផលិត</th>
                                     <th>ប្រទេសប្រភពដើមវេចខ្ចប់ជាថ្មី/នាំចេញ</th>
+                                    <th>លក្ខណរូប</th>
                                     <th>សកម្មភាព</th>
                                 </tr>
                             </thead>
@@ -547,6 +550,20 @@
                         <div id="fertilizerCountWrapper">
                             ចំនួនមុខសរុប: <span id="fertilizerCount">0</span>
                         </div>
+                    </div>
+
+                    <!-- Add button -->
+                    <div style="display:flex; justify-content:flex-end; margin-bottom:10px;">
+                        <button
+                                type="button"
+                                class="btn btn-primary"
+                                style="display:flex; align-items:center; gap:6px; border-radius:8px; padding:5px 14px;"
+                                onclick="openFertilizerPopupForAdd()">
+                            <svg viewBox="0 0 24 24" width="18" height="18">
+                                <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                            បន្ថែម
+                        </button>
                     </div>
 
                 </div>
@@ -623,6 +640,15 @@
                             <input type="text" id="fert_trade_name">
                         </div>
                     </div>
+
+                    <div class="popup-row">
+                        <div class="form-group">
+                            <label>លក្ខណរូប <span class="required">*</span></label>
+                            <input type="text" id="fert_type">
+                        </div>
+                    </div>
+
+
 
                     <!-- Production Title -->
                     <h4 style="grid-column: 1 / -1; margin-top:15px; color:#008000; font-size:15px;">
@@ -907,6 +933,21 @@
             // As requested: same behavior as edit (user can change)
             openFertilizerPopupForEdit(index);
         }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const radios = document.querySelectorAll('input[name="purpose[]"]');
+            const newRegisterInput = document.getElementById("newRegisterInput");
+
+            radios.forEach(radio => {
+                radio.addEventListener("change", function () {
+                    if (this.value === "new_register") {
+                        newRegisterInput.classList.remove("hidden");
+                    } else {
+                        newRegisterInput.classList.add("hidden");
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>

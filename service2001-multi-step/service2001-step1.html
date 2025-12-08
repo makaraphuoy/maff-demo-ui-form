@@ -394,13 +394,13 @@
     <div class="section-content">
         <div class="form-container">
             <div class="applicant-type-row">
-                <div class="radio-group">
-                    <div class="radio-pill">
+                <div class="radio-group" style="display: none">
+                    <!--<div class="radio-pill">
                         <input type="radio" id="individual" name="applicant_type" value="individual" checked onchange="toggleFormType()">
                         <label for="individual">រូបវន្តបុគ្គល</label>
-                    </div>
+                    </div>-->
                     <div class="radio-pill">
-                        <input type="radio" id="company" name="applicant_type" value="company" onchange="toggleFormType()">
+                        <input type="radio" id="company" name="applicant_type" value="company"  checked onchange="toggleFormType()">
                         <label for="company">នីតិបុគ្គល</label>
                     </div>
                 </div>
@@ -798,7 +798,11 @@
         <div class="form-container">
             <div class="radio-group">
                 <div class="radio-pill">
-                    <input type="radio" id="rep_individual" name="representative_type" value="individual" checked onchange="toggleRepresentativeType()">
+                    <input type="radio" id="per_individual" name="representative_type" value="personal" checked onchange="toggleRepresentativeType()">
+                    <label for="per_individual">ផ្ទាល់ខ្លួន</label>
+                </div>
+                <div class="radio-pill">
+                    <input type="radio" id="rep_individual" name="representative_type" value="individual" onchange="toggleRepresentativeType()">
                     <label for="rep_individual">អ្នកតំណាងជារូបវន្តបុគ្គល</label>
                 </div>
                 <div class="radio-pill">
@@ -807,12 +811,171 @@
                 </div>
             </div>
 
+            <div id="perRepForm" class="form-grid" style="padding-top: 16px;margin-top: 10px;">
+                <div class="review-card form-group full-width">
+                    <!-- Row: Khmer name (2+4+2+4) -->
+                    <div class="kv-row">
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-label">គោត្តនាម (ខ្មែរ)៖</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-value">សុខ</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-label">នាម (ខ្មែរ)៖</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-value">ពុទ្ធី</span>
+                        </div>
+                    </div>
+
+                    <!-- Row: Latin name (2+4+2+4) -->
+                    <div class="kv-row">
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-label">គោត្តនាម (ឡាតាំង)៖</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-value">SOK</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-label">នាម (ឡាតាំង)៖</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-value">PUTHY</span>
+                        </div>
+                    </div>
+
+                    <!-- Row: DOB, nationality, gender (3 + 3 + 3 + 3) -->
+                    <div class="kv-row">
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-label">ថ្ងៃ/ខែ/ឆ្នាំកំណើត៖</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-value">15-01-1988</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-label">សញ្ជាតិ៖</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-value">ខ្មែរ</span> <span class="kv-value"></span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-label">ភេទ៖</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-value">ប្រុស</span>
+                        </div>
+                    </div>
+
+
+                    <!-- Row: ID info (3 + 3 + 3 + 3) -->
+                    <div class="kv-row">
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-label">លេខអត្តសញ្ញាណប័ណ្ណ៖</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-value">010123456789</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-label">ថ្ងៃ/ខែ/ឆ្នាំផ្តល់៖</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-value">01-02-2022</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-label">ថ្ងៃ/ខែ/ឆ្នាំផុតកំណត់៖</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-value">01-02-2032</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div id="repIndividualForm" class="form-grid">
+                <div class="review-card form-group full-width">
+                    <!-- Row: Khmer name (2+4+2+4) -->
+                    <div class="kv-row">
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-label">គោត្តនាម (ខ្មែរ)៖</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-value">សុខ</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-label">នាម (ខ្មែរ)៖</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-value">ពុទ្ធី</span>
+                        </div>
+                    </div>
+
+                    <!-- Row: Latin name (2+4+2+4) -->
+                    <div class="kv-row">
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-label">គោត្តនាម (ឡាតាំង)៖</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-value">SOK</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-label">នាម (ឡាតាំង)៖</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-value">PUTHY</span>
+                        </div>
+                    </div>
+
+                    <!-- Row: DOB, nationality, gender (3 + 3 + 3 + 3) -->
+                    <div class="kv-row">
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-label">ថ្ងៃ/ខែ/ឆ្នាំកំណើត៖</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-value">15-01-1988</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-label">សញ្ជាតិ៖</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-value">ខ្មែរ</span> <span class="kv-value"></span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-label">ភេទ៖</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-value">ប្រុស</span>
+                        </div>
+                    </div>
+
+
+                    <!-- Row: ID info (3 + 3 + 3 + 3) -->
+                    <div class="kv-row">
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-label">លេខអត្តសញ្ញាណប័ណ្ណ៖</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-value">010123456789</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-label">ថ្ងៃ/ខែ/ឆ្នាំផ្តល់៖</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-value">01-02-2022</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-label">ថ្ងៃ/ខែ/ឆ្នាំផុតកំណត់៖</span>
+                        </div>
+                        <div class="kv-col kv-col-2">
+                            <span class="kv-value">01-02-2032</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="form-group full-width">
                     <div class="transfer-upload-row">
                         <div class="doc-list" id="docListContainer">
                             <!-- Filled by JS -->
-                       </div>   
+                       </div>
                     </div>
                 </div>
             </div>
@@ -845,25 +1008,26 @@
                         <div class="doc-list" id="docListContainer1">
                             <!-- Filled by JS -->
                         <div class="doc-item" id="doc1-wrapper">
-                <div class="doc-main">
-                    <div class="doc-title-row">
-                        <div class="doc-title">ឯកសារផ្ទេរសិទ្ទិ</div>
-                        <div class="doc-required">*</div>
-                    </div>
-                    <div class="doc-meta-row" id="doc1-meta">
-                        <span class="doc-status doc-status-empty">ឯកសារមិនទាន់មាន</span>
+                        <div class="doc-main">
+                            <div class="doc-title-row">
+                                <div class="doc-title">ឯកសារផ្ទេរសិទ្ទិ</div>
+                                <div class="doc-required">*</div>
+                            </div>
+                            <div class="doc-meta-row" id="doc1-meta">
+                                <span class="doc-status doc-status-empty">ឯកសារមិនទាន់មាន</span>
+                            </div>
+                        </div>
+                    <div class="doc-actions">
+                        <button type="button" class="btn-attach" id="doc1-btn" onclick="triggerUpload('doc1')">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M16.5 6.75L9.75 13.5a2.25 2.25 0 1 1-3.18-3.18L12 4.88a3.75 3.75 0 1 1 5.3 5.3l-7.07 7.07" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                            <span>បញ្ចូល</span>
+                        </button>
+                        <input type="file" id="doc1-input" class="doc-hidden-input" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" onchange="handleFileChange('doc1')">
                     </div>
                 </div>
-                <div class="doc-actions">
-                    <button type="button" class="btn-attach" id="doc1-btn" onclick="triggerUpload('doc1')">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M16.5 6.75L9.75 13.5a2.25 2.25 0 1 1-3.18-3.18L12 4.88a3.75 3.75 0 1 1 5.3 5.3l-7.07 7.07" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
-                        </svg>
-                        <span>បញ្ចូល</span>
-                    </button>
-                    <input type="file" id="doc1-input" class="doc-hidden-input" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" onchange="handleFileChange('doc1')">
-                </div>
-            </div></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -970,18 +1134,72 @@
         function toggleRepresentativeType() {
             const repIndividualForm = document.getElementById('repIndividualForm');
             const repCompanyForm = document.getElementById('repCompanyForm');
-            const isIndividual = document.getElementById('rep_individual') && document.getElementById('rep_individual').checked;
+            const perRepForm = document.getElementById('perRepForm');
 
-            if (!repIndividualForm || !repCompanyForm) return;
+            const perIndividual = document.getElementById('per_individual')?.checked;
+            const isIndividualRep = document.getElementById('rep_individual')?.checked;
+            const isCompanyRep = document.getElementById('rep_company')?.checked;
 
-            if (isIndividual) {
-                repIndividualForm.classList.remove('hidden');
-                repCompanyForm.classList.add('hidden');
-            } else {
+            // doc containers
+            const docListContainer0 = document.getElementById('docListContainer0');
+            const docListContainer  = document.getElementById('docListContainer');
+            const docListContainer1 = document.getElementById('docListContainer1');
+
+            if (!repIndividualForm || !repCompanyForm || !perRepForm) return;
+
+            // ---- reset all visibility first ----
+            perRepForm.classList.add('hidden');
+            repIndividualForm.classList.add('hidden');
+            repCompanyForm.classList.add('hidden');
+
+            if (docListContainer0) docListContainer0.style.display = "none";
+            if (docListContainer)  docListContainer.style.display  = "none";
+            if (docListContainer1) docListContainer1.style.display = "none";
+
+            // CASE 1: Personal Application (per_individual)
+            if (perIndividual) {
+                // Show the personal label block
+                perRepForm.classList.remove('hidden');
+
+                // Show the personal info form (repIndividualForm) but no doc uploads
                 repIndividualForm.classList.add('hidden');
+
+                if (docListContainer0) docListContainer0.style.display = "";
+                // docListContainer & docListContainer1 stay hidden from reset above
+                return;
+            }
+
+            // CASE 2: Representative - Individual
+            if (isIndividualRep) {
+                // Hide personal label
+                perRepForm.classList.add('hidden');
+
+
+                // Show individual representative form
+                repIndividualForm.classList.remove('hidden');
+
+                // Show doc list for individual rep
+                if (docListContainer)  docListContainer.style.display  = "";
+                // docListContainer0 & docListContainer1 stay hidden
+                return;
+            }
+
+            // CASE 3: Representative - Company
+            if (isCompanyRep) {
+                // Hide personal label
+                perRepForm.classList.add('hidden');
+
+                // Show company representative form
                 repCompanyForm.classList.remove('hidden');
+
+                // Show company doc list
+                if (docListContainer1) docListContainer1.style.display = "";
+                // docListContainer & docListContainer0 stay hidden
+                return;
             }
         }
+
+
 
         function previewPhoto(event) {
             const file = event.target.files[0];
