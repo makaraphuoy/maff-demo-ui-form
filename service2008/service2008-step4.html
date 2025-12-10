@@ -622,23 +622,7 @@
 
     <!-- Stepper -->
     <div class="stepper">
-        <!-- Step 1 -->
-        <a href="service2008-step1.html" class="step-item completed">
-            <div class="step-number">
-                <svg viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="8" r="3.5" stroke-width="1.8"/>
-                    <path d="M5 19c1.5-3 3.9-4.5 7-4.5s5.5 1.5 7 4.5" stroke-width="1.8" stroke-linecap="round"/>
-                </svg>
-            </div>
-            <div class="step-texts">
-                <span class="step-label-main">ព័ត៌មានអ្នកឈរឈ្មោះ</span>
-            </div>
-            <div class="step-next-icon">
-                <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M9 6l6 6-6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-        </a>
+
 
         <!-- Step 2 -->
         <a href="service2008-step2.html" class="step-item completed">
@@ -651,6 +635,24 @@
             </div>
             <div class="step-texts">
                 <span class="step-label-main">ព័ត៌មានពាក្យស្នើសុំ</span>
+            </div>
+            <div class="step-next-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M9 6l6 6-6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </a>
+
+        <!-- Step 1 -->
+        <a href="service2008-step1.html" class="step-item completed">
+            <div class="step-number">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="8" r="3.5" stroke-width="1.8"/>
+                    <path d="M5 19c1.5-3 3.9-4.5 7-4.5s5.5 1.5 7 4.5" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="step-texts">
+                <span class="step-label-main">ព័ត៌មានអ្នកឈរឈ្មោះ</span>
             </div>
             <div class="step-next-icon">
                 <svg viewBox="0 0 24 24" fill="none">
@@ -716,470 +718,11 @@
         </a>
     </div>
 
-    <!-- ================= Section 1: Applicant info ================= -->
-    <div class="section">
-        <div class="section-header" onclick="toggleSection(this)">
-            ១. ព័ត៌មានអ្នកឈរឈ្មោះ
-        </div>
-        <div class="section-content">
-            <div class="form-container">
-
-                <!-- ===== License holder info ===== -->
-                <div class="review-title">ព័ត៌មានអ្នកឈរឈ្មោះអាជ្ញាបណ្ណ</div>
-                <div class="review-card">
-
-                    <!-- Type row (toggle between personal / legal) -->
-                    <div class="kv-row">
-                        <span class="kv-col kv-col-2">ប្រភេទអ្នកឈរឈ្មោះ៖</span>
-                        <span class="kv-col kv-col-2">
-                            <span id="applicantTypeLabel" class="type-toggle" onclick="toggleApplicantType()">
-                                នីតិបុគ្គល
-                            </span>
-                        </span>
-                    </div>
-
-                    <!-- ===== LEGAL ENTITY (DEFAULT) ===== -->
-                    <div id="applicantLegal">
-
-                        <!-- Row: registration + VAT (3 + 3 + 3 + 3) -->
-                        <div class="kv-row">
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-label">លេខចុះបញ្ជីអាជីវកម្ម៖</span>
-                            </div>
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-value">000123456-2025</span>
-                            </div>
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-label">លេខអាករលើតម្លៃបន្ថែម(អតប)៖</span>
-                            </div>
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-value">VAT-2025-8899</span>
-                            </div>
-                        </div>
-
-                        <!-- Row: company names (3 + 3 + 3 + 3) -->
-                        <div class="kv-row">
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-label">នាមករណ៍ក្រុមហ៊ុន (ខ្មែរ)៖</span>
-                            </div>
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-value">ក្រុមហ៊ុន អេកូជី កម្ពុជា ឯ.ក</span>
-                            </div>
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-label">នាមករណ៍ក្រុមហ៊ុន (ឡាតាំង)៖</span>
-                            </div>
-                            <div class="kv-col kv-col-3">
-                                <span class="kv-value">ECO FERT CAMBODIA Co., Ltd.</span>
-                            </div>
-                        </div>
-
-                        <!-- Address title -->
-                        <div class="subsection-title" style="margin-top:10px;">អាសយដ្ឋានបច្ចុប្បន្ន</div>
-
-                        <!-- Row: province / district / commune (2 + 2 + 2 + 2 + 2 + 2) -->
-                        <div class="kv-row">
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-label">ខេត្ត/រាជធានី៖</span>
-                            </div>
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-value">ភ្នំពេញ</span>
-                            </div>
-
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-label">ស្រុក/ខណ្ឌ៖</span>
-                            </div>
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-value">ចំការមន</span>
-                            </div>
-
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-label">ឃុំ/សង្កាត់៖</span>
-                            </div>
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-value">ទួលទឹកផុស</span>
-                            </div>
-                        </div>
-
-                        <!-- Row: village / street / house (2 + 2 + 2 + 2 + 2 + 2) -->
-                        <div class="kv-row">
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-label">ភូមិ៖</span>
-                            </div>
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-value">៥</span>
-                            </div>
-
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-label">ផ្លូវ៖</span>
-                            </div>
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-value">271</span>
-                            </div>
-
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-label">ផ្ទះលេខ/អាគារ៖</span>
-                            </div>
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-value">12B</span>
-                            </div>
-                        </div>
-
-                        <!-- Row: phone / email (3 + 3 + 3 + 3) -->
-                        <div class="kv-row">
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-label">លេខទូរសព្ទ៖</span>
-                            </div>
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-value">012 345 678</span>
-                            </div>
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-label">លេខទូរសព្ទលើតុ៖</span>
-                            </div>
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-value">012 345 678</span>
-                            </div>
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-label">អ៊ីម៉ែល៖</span>
-                            </div>
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-value">info@ecofert.com</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ===== NATURAL PERSON (HIDDEN INITIALLY) ===== -->
-                    <div id="applicantPersonal" class="hidden-block" style="margin-top:10px;">
-                        <div class="applicant-layout">
-                            <div class="applicant-left">
-
-                                <!-- Row: Khmer name (2+4+2+4) -->
-                                <div class="kv-row">
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-label">គោត្តនាម (ខ្មែរ)៖</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-value">សុខ</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-label">នាម (ខ្មែរ)៖</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-value">ពុទ្ធី</span>
-                                    </div>
-                                </div>
-
-                                <!-- Row: Latin name (2+4+2+4) -->
-                                <div class="kv-row">
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-label">គោត្តនាម (ឡាតាំង)៖</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-value">SOK</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-label">នាម (ឡាតាំង)៖</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-value">PUTHY</span>
-                                    </div>
-                                </div>
-
-                                <!-- Row: DOB, nationality, gender (3 + 3 + 3 + 3) -->
-                                <div class="kv-row">
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-label">ថ្ងៃ/ខែ/ឆ្នាំកំណើត៖</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-value">15-01-1988</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-label">សញ្ជាតិ៖</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-value">ខ្មែរ</span> <span class="kv-value"></span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-label">ភេទ៖</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-value">ប្រុស</span>
-                                    </div>
-                                </div>
-
-
-                                <!-- Row: ID info (3 + 3 + 3 + 3) -->
-                                <div class="kv-row">
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-label">លេខអត្តសញ្ញាណប័ណ្ណ៖</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-value">010123456789</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-label">ថ្ងៃ/ខែ/ឆ្នាំផ្តល់៖</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-value">01-02-2022</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-label">ថ្ងៃ/ខែ/ឆ្នាំផុតកំណត់៖</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-value">01-02-2032</span>
-                                    </div>
-                                </div>
-
-                                <!-- Address title -->
-                                <div class="subsection-title" style="margin-top:10px;">អាសយដ្ឋានបច្ចុប្បន្ន</div>
-
-                                <!-- Row: province / district / commune (2 + 2 + 2 + 2 + 2 + 2) -->
-                                <div class="kv-row">
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-label">ខេត្ត/រាជធានី៖</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-value">ភ្នំពេញ</span>
-                                    </div>
-
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-label">ស្រុក/ខណ្ឌ៖</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-value">ចំការមន</span>
-                                    </div>
-
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-label">ឃុំ/សង្កាត់៖</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-value">ទួលទឹកផុស</span>
-                                    </div>
-                                </div>
-
-                                <!-- Row: village / street / house (2 + 2 + 2 + 2 + 2 + 2) -->
-                                <div class="kv-row">
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-label">ភូមិ៖</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-value">៥</span>
-                                    </div>
-
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-label">ផ្លូវ៖</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-value">271</span>
-                                    </div>
-
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-label">ផ្ទះលេខ/អាគារ៖</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-value">12B</span>
-                                    </div>
-                                </div>
-
-                                <!-- Row: phone / email (3 + 3 + 3 + 3) -->
-                                <div class="kv-row">
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-label">លេខទូរសព្ទ៖</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-value">012 345 678</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-label">អ៊ីម៉ែល៖</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-value">info@ecofert.com</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Photo on right -->
-                            <div class="applicant-right">
-                                <div class="applicant-photo">
-                                    រូបថត
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ===== Representative ===== -->
-                <div class="review-title" style="margin-top:6px;">
-                    អ្នកតំណាងស្នើសុំអាជ្ញាបណ្ណ
-                    <span class="badge-inline" id="repOptPersonal" onclick="setRepType('personal')">រូបវន្តបុគ្គល</span>
-                    <span class="badge-inline" id="repOptLegal" onclick="setRepType('legal')">នីតិបុគ្គល</span>
-                    <span class="badge-inline" id="repOptNone" onclick="setRepType('none')">មិនមាន</span>
-                </div>
-
-                <div class="review-card">
-
-                    <!-- Representative: no representative -->
-                    <div id="repNone" class="hidden-block">
-                        <div class="no-rep-text">
-                            បំពេញពាក្យស្នើសុំដោយផ្ទាល់
-                        </div>
-                    </div>
-
-                    <!-- Representative: personal (default) -->
-                    <div id="repPersonal">
-                        <!-- Row: Khmer name (2+4+2+4) -->
-                        <div class="kv-row">
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-label">គោត្តនាម (ខ្មែរ)៖</span>
-                            </div>
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-value">សុខ</span>
-                            </div>
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-label">នាម (ខ្មែរ)៖</span>
-                            </div>
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-value">ពុទ្ធី</span>
-                            </div>
-                        </div>
-
-                        <!-- Row: Latin name (2+4+2+4) -->
-                        <div class="kv-row">
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-label">គោត្តនាម (ឡាតាំង)៖</span>
-                            </div>
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-value">SOK</span>
-                            </div>
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-label">នាម (ឡាតាំង)៖</span>
-                            </div>
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-value">PUTHY</span>
-                            </div>
-                        </div>
-
-                        <!-- Row: DOB, nationality, gender (3 + 3 + 3 + 3) -->
-                        <div class="kv-row">
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-label">ថ្ងៃ/ខែ/ឆ្នាំកំណើត៖</span>
-                            </div>
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-value">15-01-1988</span>
-                            </div>
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-label">សញ្ជាតិ៖</span>
-                            </div>
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-value">ខ្មែរ</span>
-                            </div>
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-label">ភេទ៖</span>
-                            </div>
-                            <div class="kv-col kv-col-2">
-                                <span class="kv-value">ប្រុស</span>
-                            </div>
-                        </div>
-                        <!-- Row: phone / email (3 + 3 + 3 + 3) -->
-                                <div class="kv-row">
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-label">លេខទូរសព្ទ៖</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-value">012 345 678</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-label">អ៊ីម៉ែល៖</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-value">info@ecofert.com</span>
-                                    </div>
-                                </div>
-
-                    </div>
-
-                    <!-- Representative: legal -->
-                    <div id="repLegal" class="hidden-block">
-                        <!-- For rep legal: use 4/8 to approximate 400px/400px -->
-                        <div class="kv-row">
-                            <div class="kv-col kv-col-4">
-                                <span class="kv-label">ឈ្មោះក្រុមហ៊ុនអ្នកតំណាងចុះបញ្ជី (ភាសាខ្មែរ)៖</span>
-                            </div>
-                            <div class="kv-col kv-col-8 kv-col-8-fix">
-                                <span class="kv-value">ក្រុមហ៊ុន អេកូជី កម្ពុជា ឯ.ក</span>
-                            </div>
-                        </div>
-                        <div class="kv-row">
-                            <div class="kv-col kv-col-4">
-                                <span class="kv-label">ឈ្មោះក្រុមហ៊ុនអ្នកតំណាងចុះបញ្ជី (ឡាតាំង)៖</span>
-                            </div>
-                            <div class="kv-col kv-col-8">
-                                <span class="kv-value">ECO FERT CAMBODIA Co., Ltd.</span>
-                            </div>
-                        </div>
-                        <div class="kv-row">
-                            <div class="kv-col kv-col-4">
-                                <span class="kv-label">លេខចុះបញ្ជីអាជីវកម្ម៖</span>
-                            </div>
-                            <div class="kv-col kv-col-8">
-                                <span class="kv-value">000123456-2025</span>
-                            </div>
-                        </div>
-                        <div class="kv-row">
-                            <div class="kv-col kv-col-4">
-                                <span class="kv-label">លេខអាករលើតម្លៃបន្ថែម (អតប)៖</span>
-                            </div>
-                            <div class="kv-col kv-col-8">
-                                <span class="kv-value">VAT-2025-8899</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Transfer document (hidden when rep = none) -->
-                    <div id="transferDocumentSection" style="margin-top:12px;">
-
-                        <div class="subsection-title">ឯកសារផ្ទេរសិទ្ទិ</div>
-
-                        <div class="doc-item">
-                        <div class="doc-main">
-                            <div class="doc-meta-row">
-                                <span class="doc-status-hasfile">ឯកសារបានបញ្ចូល</span>
-                                <span class="doc-file-pill">
-                                    <svg viewBox="0 0 24 24">
-                                        <path d="M7 3h7l5 5v13H7z" fill="none" stroke="currentColor" stroke-width="1.4"/>
-                                        <path d="M14 3v5h5" fill="none" stroke="currentColor" stroke-width="1.4"/>
-                                    </svg>
-                                    <span class="doc-file-name">business-registration-cert.pdf</span>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="doc-actions">
-                            <button type="button" class="btn-link"
-                                    onclick="alert('Preview business-registration-cert.pdf');"
-                                    aria-label="មើលឯកសារ">
-                                <svg viewBox="0 0 24 24" fill="none">
-                                    <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
-                                          stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <circle cx="12" cy="12" r="3" stroke-width="1.6"/>
-                                </svg>
-                            </button>
-                        </div>
-                        </div>
-
-                        
-                        
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-
     <!-- ================= Section 2: Request info ================= -->
     <div class="section">
         
         <div class="section-header" onclick="toggleSection(this)">
-            ២. ព័ត៌មានពាក្យស្នើសុំ
+            ១. ព័ត៌មានពាក្យស្នើសុំ
         </div>
         <div class="section-content">
 
@@ -1622,6 +1165,466 @@
                 <div class="total-count">
                     ចំនួនមុខសរុប: 10
                 </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ================= Section 1: Applicant info ================= -->
+    <div class="section">
+        <div class="section-header" onclick="toggleSection(this)">
+            ២ ព័ត៌មានអ្នកឈរឈ្មោះ
+        </div>
+        <div class="section-content">
+            <div class="form-container">
+
+                <!-- ===== License holder info ===== -->
+                <div class="review-title">ព័ត៌មានអ្នកឈរឈ្មោះអាជ្ញាបណ្ណ</div>
+                <div class="review-card">
+
+                    <!-- Type row (toggle between personal / legal) -->
+                    <div class="kv-row">
+                        <span class="kv-col kv-col-2">ប្រភេទអ្នកឈរឈ្មោះ៖</span>
+                        <span class="kv-col kv-col-2">
+                            <span id="applicantTypeLabel" class="type-toggle" onclick="toggleApplicantType()">
+                                នីតិបុគ្គល
+                            </span>
+                        </span>
+                    </div>
+
+                    <!-- ===== LEGAL ENTITY (DEFAULT) ===== -->
+                    <div id="applicantLegal">
+
+                        <!-- Row: registration + VAT (3 + 3 + 3 + 3) -->
+                        <div class="kv-row">
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">លេខចុះបញ្ជីអាជីវកម្ម៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">000123456-2025</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">លេខអាករលើតម្លៃបន្ថែម(អតប)៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">VAT-2025-8899</span>
+                            </div>
+                        </div>
+
+                        <!-- Row: company names (3 + 3 + 3 + 3) -->
+                        <div class="kv-row">
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">នាមករណ៍ក្រុមហ៊ុន (ខ្មែរ)៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">ក្រុមហ៊ុន អេកូជី កម្ពុជា ឯ.ក</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">នាមករណ៍ក្រុមហ៊ុន (ឡាតាំង)៖</span>
+                            </div>
+                            <div class="kv-col kv-col-3">
+                                <span class="kv-value">ECO FERT CAMBODIA Co., Ltd.</span>
+                            </div>
+                        </div>
+
+                        <!-- Address title -->
+                        <div class="subsection-title" style="margin-top:10px;">អាសយដ្ឋានបច្ចុប្បន្ន</div>
+
+                        <!-- Row: province / district / commune (2 + 2 + 2 + 2 + 2 + 2) -->
+                        <div class="kv-row">
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">ខេត្ត/រាជធានី៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">ភ្នំពេញ</span>
+                            </div>
+
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">ស្រុក/ខណ្ឌ៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">ចំការមន</span>
+                            </div>
+
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">ឃុំ/សង្កាត់៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">ទួលទឹកផុស</span>
+                            </div>
+                        </div>
+
+                        <!-- Row: village / street / house (2 + 2 + 2 + 2 + 2 + 2) -->
+                        <div class="kv-row">
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">ភូមិ៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">៥</span>
+                            </div>
+
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">ផ្លូវ៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">271</span>
+                            </div>
+
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">ផ្ទះលេខ/អាគារ៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">12B</span>
+                            </div>
+                        </div>
+
+                        <!-- Row: phone / email (3 + 3 + 3 + 3) -->
+                        <div class="kv-row">
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">លេខទូរសព្ទ៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">012 345 678</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">លេខទូរសព្ទលើតុ៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">012 345 678</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">អ៊ីម៉ែល៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">info@ecofert.com</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== NATURAL PERSON (HIDDEN INITIALLY) ===== -->
+                    <div id="applicantPersonal" class="hidden-block" style="margin-top:10px;">
+                        <div class="applicant-layout">
+                            <div class="applicant-left">
+
+                                <!-- Row: Khmer name (2+4+2+4) -->
+                                <div class="kv-row">
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-label">គោត្តនាម (ខ្មែរ)៖</span>
+                                    </div>
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-value">សុខ</span>
+                                    </div>
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-label">នាម (ខ្មែរ)៖</span>
+                                    </div>
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-value">ពុទ្ធី</span>
+                                    </div>
+                                </div>
+
+                                <!-- Row: Latin name (2+4+2+4) -->
+                                <div class="kv-row">
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-label">គោត្តនាម (ឡាតាំង)៖</span>
+                                    </div>
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-value">SOK</span>
+                                    </div>
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-label">នាម (ឡាតាំង)៖</span>
+                                    </div>
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-value">PUTHY</span>
+                                    </div>
+                                </div>
+
+                                <!-- Row: DOB, nationality, gender (3 + 3 + 3 + 3) -->
+                                <div class="kv-row">
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-label">ថ្ងៃ/ខែ/ឆ្នាំកំណើត៖</span>
+                                    </div>
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-value">15-01-1988</span>
+                                    </div>
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-label">សញ្ជាតិ៖</span>
+                                    </div>
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-value">ខ្មែរ</span> <span class="kv-value"></span>
+                                    </div>
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-label">ភេទ៖</span>
+                                    </div>
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-value">ប្រុស</span>
+                                    </div>
+                                </div>
+
+
+                                <!-- Row: ID info (3 + 3 + 3 + 3) -->
+                                <div class="kv-row">
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-label">លេខអត្តសញ្ញាណប័ណ្ណ៖</span>
+                                    </div>
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-value">010123456789</span>
+                                    </div>
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-label">ថ្ងៃ/ខែ/ឆ្នាំផ្តល់៖</span>
+                                    </div>
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-value">01-02-2022</span>
+                                    </div>
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-label">ថ្ងៃ/ខែ/ឆ្នាំផុតកំណត់៖</span>
+                                    </div>
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-value">01-02-2032</span>
+                                    </div>
+                                </div>
+
+                                <!-- Address title -->
+                                <div class="subsection-title" style="margin-top:10px;">អាសយដ្ឋានបច្ចុប្បន្ន</div>
+
+                                <!-- Row: province / district / commune (2 + 2 + 2 + 2 + 2 + 2) -->
+                                <div class="kv-row">
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-label">ខេត្ត/រាជធានី៖</span>
+                                    </div>
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-value">ភ្នំពេញ</span>
+                                    </div>
+
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-label">ស្រុក/ខណ្ឌ៖</span>
+                                    </div>
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-value">ចំការមន</span>
+                                    </div>
+
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-label">ឃុំ/សង្កាត់៖</span>
+                                    </div>
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-value">ទួលទឹកផុស</span>
+                                    </div>
+                                </div>
+
+                                <!-- Row: village / street / house (2 + 2 + 2 + 2 + 2 + 2) -->
+                                <div class="kv-row">
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-label">ភូមិ៖</span>
+                                    </div>
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-value">៥</span>
+                                    </div>
+
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-label">ផ្លូវ៖</span>
+                                    </div>
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-value">271</span>
+                                    </div>
+
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-label">ផ្ទះលេខ/អាគារ៖</span>
+                                    </div>
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-value">12B</span>
+                                    </div>
+                                </div>
+
+                                <!-- Row: phone / email (3 + 3 + 3 + 3) -->
+                                <div class="kv-row">
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-label">លេខទូរសព្ទ៖</span>
+                                    </div>
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-value">012 345 678</span>
+                                    </div>
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-label">អ៊ីម៉ែល៖</span>
+                                    </div>
+                                    <div class="kv-col kv-col-2">
+                                        <span class="kv-value">info@ecofert.com</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Photo on right -->
+                            <div class="applicant-right">
+                                <div class="applicant-photo">
+                                    រូបថត
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== Representative ===== -->
+                <div class="review-title" style="margin-top:6px;">
+                    អ្នកតំណាងស្នើសុំអាជ្ញាបណ្ណ
+                    <span class="badge-inline" id="repOptPersonal" onclick="setRepType('personal')">រូបវន្តបុគ្គល</span>
+                    <span class="badge-inline" id="repOptLegal" onclick="setRepType('legal')">នីតិបុគ្គល</span>
+                    <span class="badge-inline" id="repOptNone" onclick="setRepType('none')">មិនមាន</span>
+                </div>
+
+                <div class="review-card">
+
+                    <!-- Representative: no representative -->
+                    <div id="repNone" class="hidden-block">
+                        <div class="no-rep-text">
+                            បំពេញពាក្យស្នើសុំដោយផ្ទាល់
+                        </div>
+                    </div>
+
+                    <!-- Representative: personal (default) -->
+                    <div id="repPersonal">
+                        <!-- Row: Khmer name (2+4+2+4) -->
+                        <div class="kv-row">
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">គោត្តនាម (ខ្មែរ)៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">សុខ</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">នាម (ខ្មែរ)៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">ពុទ្ធី</span>
+                            </div>
+                        </div>
+
+                        <!-- Row: Latin name (2+4+2+4) -->
+                        <div class="kv-row">
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">គោត្តនាម (ឡាតាំង)៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">SOK</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">នាម (ឡាតាំង)៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">PUTHY</span>
+                            </div>
+                        </div>
+
+                        <!-- Row: DOB, nationality, gender (3 + 3 + 3 + 3) -->
+                        <div class="kv-row">
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">ថ្ងៃ/ខែ/ឆ្នាំកំណើត៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">15-01-1988</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">សញ្ជាតិ៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">ខ្មែរ</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">ភេទ៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">ប្រុស</span>
+                            </div>
+                        </div>
+                        <!-- Row: phone / email (3 + 3 + 3 + 3) -->
+                        <div class="kv-row">
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">លេខទូរសព្ទ៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">012 345 678</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">អ៊ីម៉ែល៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">info@ecofert.com</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Representative: legal -->
+                    <div id="repLegal" class="hidden-block">
+                        <!-- For rep legal: use 4/8 to approximate 400px/400px -->
+                        <div class="kv-row">
+                            <div class="kv-col kv-col-4">
+                                <span class="kv-label">ឈ្មោះក្រុមហ៊ុនអ្នកតំណាងចុះបញ្ជី (ភាសាខ្មែរ)៖</span>
+                            </div>
+                            <div class="kv-col kv-col-8 kv-col-8-fix">
+                                <span class="kv-value">ក្រុមហ៊ុន អេកូជី កម្ពុជា ឯ.ក</span>
+                            </div>
+                        </div>
+                        <div class="kv-row">
+                            <div class="kv-col kv-col-4">
+                                <span class="kv-label">ឈ្មោះក្រុមហ៊ុនអ្នកតំណាងចុះបញ្ជី (ឡាតាំង)៖</span>
+                            </div>
+                            <div class="kv-col kv-col-8">
+                                <span class="kv-value">ECO FERT CAMBODIA Co., Ltd.</span>
+                            </div>
+                        </div>
+                        <div class="kv-row">
+                            <div class="kv-col kv-col-4">
+                                <span class="kv-label">លេខចុះបញ្ជីអាជីវកម្ម៖</span>
+                            </div>
+                            <div class="kv-col kv-col-8">
+                                <span class="kv-value">000123456-2025</span>
+                            </div>
+                        </div>
+                        <div class="kv-row">
+                            <div class="kv-col kv-col-4">
+                                <span class="kv-label">លេខអាករលើតម្លៃបន្ថែម (អតប)៖</span>
+                            </div>
+                            <div class="kv-col kv-col-8">
+                                <span class="kv-value">VAT-2025-8899</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Transfer document (hidden when rep = none) -->
+                    <div id="transferDocumentSection" style="margin-top:12px;">
+
+                        <div class="subsection-title">ឯកសារផ្ទេរសិទ្ទិ</div>
+
+                        <div class="doc-item">
+                            <div class="doc-main">
+                                <div class="doc-meta-row">
+                                    <span class="doc-status-hasfile">ឯកសារបានបញ្ចូល</span>
+                                    <span class="doc-file-pill">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M7 3h7l5 5v13H7z" fill="none" stroke="currentColor" stroke-width="1.4"/>
+                                        <path d="M14 3v5h5" fill="none" stroke="currentColor" stroke-width="1.4"/>
+                                    </svg>
+                                    <span class="doc-file-name">business-registration-cert.pdf</span>
+                                </span>
+                                </div>
+                            </div>
+                            <div class="doc-actions">
+                                <button type="button" class="btn-link"
+                                        onclick="alert('Preview business-registration-cert.pdf');"
+                                        aria-label="មើលឯកសារ">
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
+                                              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <circle cx="12" cy="12" r="3" stroke-width="1.6"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
             </div>
         </div>
     </div>

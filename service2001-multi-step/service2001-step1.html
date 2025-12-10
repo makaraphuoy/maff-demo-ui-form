@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>លិខិតអនុញ្ញាតផ្គត់ផ្គង់ចែកចាយជីកសិកម្ម</title>
+    <title>១. វិញ្ញាបនបត្របញ្ជាក់បញ្ជីកសិកម្ម</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@100;300;400;700;900&display=swap" rel="stylesheet">
@@ -1115,28 +1115,42 @@
     </div>
 </div>
 
-<div class="step-nav">
-    <button class="btn btn-outline-green">
-        <span class="btn-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M5 3h14v18H5z" fill="none" stroke="currentColor" stroke-width="1.6"/>
-                <path d="M5 9h14" stroke="currentColor" stroke-width="1.6"/>
-                <path d="M9 3v6" stroke="currentColor" stroke-width="1.6"/>
-                <rect x="9" y="13" width="6" height="5" stroke="currentColor" stroke-width="1.6" fill="none"/>
-            </svg>
-        </span>
-        រក្សាទុក & ចាកចេញ
-    </button>
+    <!-- Bottom navigation -->
+    <div class="step-nav">
+        <!-- Left -->
+        <button class="btn btn-outline-green" type="button">
+                <span class="btn-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M5 3h14v18H5z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                        <path d="M5 9h14" stroke="currentColor" stroke-width="1.6"/>
+                        <path d="M9 3v6" stroke="currentColor" stroke-width="1.6"/>
+                        <rect x="9" y="13" width="6" height="5" stroke="currentColor" stroke-width="1.6" fill="none"/>
+                    </svg>
+                </span>
+            រក្សាទុក & ចាកចេញ
+        </button>
 
-    <button class="btn btn-primary" onclick="window.location.href='service2001-step2.html'">
-        បន្ទាប់
-        <span class="btn-icon-right">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" />
-            </svg>
-        </span>
-    </button>
-</div>
+        <!-- Right buttons -->
+        <div class="step-right-group">
+            <a href="service2001-step2.html" class="btn btn-outline-green">
+                    <span class="btn-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </span>
+                ត្រឡប់ក្រោយ
+            </a>
+
+            <a href="service2001-step3.html" class="btn btn-primary">
+                បន្ទាប់
+                <span class="btn-icon-right">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </span>
+            </a>
+        </div>
+    </div>
 
     <script>
         function toggleSection(header) {

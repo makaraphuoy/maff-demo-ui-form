@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ទម្រង់ចុះឈ្មោះ - ព័ត៌មានពាក្យស្នើសុំ</title>
+    <title>១. វិញ្ញាបនបត្របញ្ជាក់បញ្ជីកសិកម្ម</title>
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -328,6 +328,56 @@
         .step-item:last-child .step-next-icon {
             opacity: 0;
         }
+
+
+
+
+
+
+        /* Entire first row for the label */
+        #newRegisterInput .form-group > label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        /* Row 2 layout: 12 columns */
+        #newRegisterInput .input-group {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 12px;
+            width: 100%;
+            align-items: center;
+        }
+
+        /* Input = 4 columns */
+        #newRegisterInput #fert_type {
+            grid-column: span 3;
+            width: 100% !important;
+        }
+
+        /* Search button = 2 columns */
+        #newRegisterInput .input-group button {
+            grid-column: span 1;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            white-space: nowrap;
+        }
+
+        /* Remaining 6 columns = empty space */
+        #newRegisterInput .input-group::after {
+            content: "";
+            grid-column: span 6;
+        }
+
+
+
     </style>
 </head>
 <body>
@@ -475,21 +525,27 @@
 
                     <div id="newRegisterInput" class="hidden">
 
-                        <div class="popup-row">
+                        <div class="popup-row1">
                             <div class="form-group" style="margin-top: 20px">
-                                <label>
+                                <label style="font-weight: bold">
                                     លេខវិញ្ញាបនបត្របញ្ជាក់បញ្ជីកសិកម្ម
                                     <span class="required">*</span>
                                 </label>
 
                                 <div class="input-group">
-                                    <input type="text" id="fert_type">
-                                    <button type="button" class="btn-search" id="searchFertBtn" style="padding: 6px 14px;
-                                        background-color: #007bff;
-                                        color: white;
-                                        border: none;
-                                        border-radius: 4px;
-                                        cursor: pointer;">ស្វែងរក</button>
+                                    <input type="text" id="fert_type" style="width:300px">
+
+                                    <button
+                                            type="button"
+                                            class="btn btn-primary"
+                                            style="align-items:center; gap:6px; border-radius:8px; padding:10px 14px;">
+                                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="11" cy="11" r="7"></circle>
+                                            <line x1="16" y1="16" x2="21" y2="21"></line>
+                                        </svg>
+                                        ស្វែងរក
+                                    </button>
+
                                 </div>
                             </div>
                         </div>
@@ -507,15 +563,24 @@
 
                     <div class="checkbox-grid">
 
-                        <label class="checkbox-pill-row">
-                            <input type="radio" name="purpose១[]" value="commercial">
+                        <label class="checkbox-purpose">
+                            <input type="checkbox" name="purpose១[]" value="commercial">
                             <span>គោលបំណងពាណិជ្ជកម្ម</span>
                         </label>
 
-                        <label class="checkbox-pill-row">
-                            <input type="radio" name="purpose១[]" value="non_commercial">
+                        <label class="checkbox-purpose">
+                            <input type="checkbox" name="purpose១[]" value="non_commercial">
                             <span>គោលបំណងមិនពាណិជ្ជកម្ម</span>
                         </label>
+
+                        <label class="checkbox-purpose" id="other_purpose" style="display:flex; align-items:center; gap:12px; width:100%;">
+                            <input type="checkbox" name="purpose១[]" value="non_commercial" id="purpose_other" onclick="toggleOtherPurpose()">
+                            <span>គោលបំណងផ្សេងទៀត</span>
+                            <div id="purpose_other_group" class="input-group" style="display:none; flex:1;">
+                                <input type="text" class="form-control" placeholder="សូមបញ្ជាក់ *" style="padding: 8px 10px;border: 1px solid #d1d5db;border-radius: 6px;font-size: 14px;width: 100%;">
+                            </div>
+                        </label>
+
 
                     </div>
 
@@ -525,11 +590,8 @@
 
                     <!-- Sub-section 2 -->
                     <h3 style="color:#008000; font-size:16px; margin-bottom:12px;">
-                        ២. យថាប្រភេទជីកសិកម្មដែលស្នើសុំការចុះបញ្ជី
+                        ៣. យថាប្រភេទជីកសិកម្មដែលស្នើសុំការចុះបញ្ជី
                     </h3>
-
-
-
 
                     <!-- Table -->
                     <div class="fertilizer-table-wrapper">
@@ -574,12 +636,12 @@
             </div>
         </div>
 
-        <!-- Bottom navigation -->
+
+
         <div class="step-nav">
-            <!-- Left -->
-            <button class="btn btn-outline-green" type="button">
+            <button class="btn btn-outline-green">
                 <span class="btn-icon">
-                    <svg viewBox="0 0 24 24">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M5 3h14v18H5z" fill="none" stroke="currentColor" stroke-width="1.6"/>
                         <path d="M5 9h14" stroke="currentColor" stroke-width="1.6"/>
                         <path d="M9 3v6" stroke="currentColor" stroke-width="1.6"/>
@@ -589,27 +651,18 @@
                 រក្សាទុក & ចាកចេញ
             </button>
 
-            <!-- Right buttons -->
-            <div class="step-right-group">
-                <a href="service2001-step1.html" class="btn btn-outline-green">
-                    <span class="btn-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" fill="none"/>
-                        </svg>
-                    </span>
-                    ត្រឡប់ក្រោយ
-                </a>
 
-                <a href="service2001-step3.html" class="btn btn-primary">
-                    បន្ទាប់
-                    <span class="btn-icon-right">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/>
-                        </svg>
-                    </span>
-                </a>
-            </div>
+            <button class="btn btn-primary" onclick="window.location.href='service2001-step1.html'">
+                បន្ទាប់
+                <span class="btn-icon-right">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" />
+                </svg>
+                  </span>
+            </button>
         </div>
+
+
 
     </div>
 
@@ -952,6 +1005,28 @@
                 });
             });
         });
+        function toggleOtherPurpose() {
+            const cb = document.getElementById('purpose_other');
+            const group = document.getElementById('purpose_other_group');
+
+            const input = document.getElementById('other_purpose');
+
+
+            group.style.display = cb.checked ? "block" : "none";
+
+
+            if (cb.checked) {
+                input.style.width = "500px";   // 🔥 set width when checked
+            } else {
+                input.style.width = "100%";        // reset width
+            }
+
+
+
+        }
+
+    </script>
+
     </script>
 </body>
 </html>

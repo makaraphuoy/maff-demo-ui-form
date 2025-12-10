@@ -610,7 +610,7 @@
     <!-- Header -->
     <div class="page-header-soft">
         <div class="page-title">
-            ៤.​វិញ្ញាបនបត្របញ្ជាក់បញ្ជិកាថ្នាំកសិកម្ម 
+            ៥.​វិញ្ញាបនបត្របញ្ជាក់បញ្ជិកាថ្នាំកសិកម្ម
         </div>
         <div class="page-home">
             <a href="https://makaraphuoy.github.io/maff-demo-ui-form/" class="home-link">
@@ -622,23 +622,7 @@
 
     <!-- Stepper -->
     <div class="stepper">
-        <!-- Step 1 -->
-        <a href="service2004-step1.html" class="step-item completed">
-            <div class="step-number">
-                <svg viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="8" r="3.5" stroke-width="1.8"/>
-                    <path d="M5 19c1.5-3 3.9-4.5 7-4.5s5.5 1.5 7 4.5" stroke-width="1.8" stroke-linecap="round"/>
-                </svg>
-            </div>
-            <div class="step-texts">
-                <span class="step-label-main">ព័ត៌មានអ្នកឈរឈ្មោះ</span>
-            </div>
-            <div class="step-next-icon">
-                <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M9 6l6 6-6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-        </a>
+
 
         <!-- Step 2 -->
         <a href="service2004-step2.html" class="step-item completed">
@@ -651,6 +635,24 @@
             </div>
             <div class="step-texts">
                 <span class="step-label-main">ព័ត៌មានពាក្យស្នើសុំ</span>
+            </div>
+            <div class="step-next-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M9 6l6 6-6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </a>
+
+        <!-- Step 1 -->
+        <a href="service2004-step1.html" class="step-item completed">
+            <div class="step-number">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="8" r="3.5" stroke-width="1.8"/>
+                    <path d="M5 19c1.5-3 3.9-4.5 7-4.5s5.5 1.5 7 4.5" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="step-texts">
+                <span class="step-label-main">ព័ត៌មានអ្នកឈរឈ្មោះ</span>
             </div>
             <div class="step-next-icon">
                 <svg viewBox="0 0 24 24" fill="none">
@@ -715,11 +717,377 @@
             </div>
         </a>
     </div>
+  <!-- ================= Section 2: Request info ================= -->
+    <div class="section">
+        <div class="section-header" onclick="toggleSection(this)">
+            ១. ព័ត៌មានពាក្យស្នើសុំ
+        </div>
+        <div class="section-content">
+            <div class="form-container">
+
+                <!-- Purpose -->
+                <div class="review-title">១. លក្ខណនៃសំណើ</div>
+                <div class="purpose-check-list">
+                    <label class="purpose-check disabled">
+                        <input type="checkbox" checked>
+                        <span>ការចុះបញ្ជី</span>
+                    </label>
+                </div>
+
+                <hr style="border:none; border-top:1px solid #e5e7eb; margin:18px 0;">
+
+                <!-- Purpose -->
+                <div class="review-title">២. គោលបំណង</div>
+                <div class="purpose-check-list">
+                    <label class="purpose-check">
+                        <input type="checkbox" checked>
+                        <span>គោលបំណងពាណិជ្ជកម្ម</span>
+                    </label>
+                </div>
+
+                <hr style="border:none; border-top:1px solid #e5e7eb; margin:18px 0;">
+
+                <!-- Fertilizer list -->
+                <div class="review-title">៣. យថាប្រភេទថ្នាំកសិក្មដែលស្នើសុំការចុះបញ្ជី</div>
+                <div class="fert-table-wrapper">
+                    <table class="review-table">
+                        <thead>
+                        <tr>
+                            <th>ល.រ.</th>
+                                    <th>ឈ្មោះឃ្លាំងសន្និធិ (ផលិតផលថ្នាំកសិកម្ម)</th>
+                                    <th>ឈ្មោះទូទៅ (សារធាតុសកម្ម)</th>
+                                    <th>លេខអត្តសញ្ញាន</th>
+                                    <th>ចំណាត់ថ្នាក់ថ្នាំកិសកម្ម</th>
+                                    <th>ប្រទេសប្រភពដើមផលិតឬលាយផ្សំ</th>
+                                    <th>សកម្មភាព</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>A</td>
+                            <td>1000</td>
+                            <td>1000</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>
+                                <button
+                                    class="table-action-btn"
+                                    type="button"
+                                    aria-label="មើលលម្អិត"
+                                    onclick="openFertModal(this)"
+                                    data-yatha="NPK 15-15-15"
+                                    data-category="ជីគីមី"
+                                    data-trade="GreenGrow 15"
+                                    data-prod-country="ថៃ"
+                                    data-prod-company="GreenGrow Fertilizer Co., Ltd."
+                                    data-prod-company-country="ថៃ"
+                                    data-pack-country="កម្ពុជា"
+                                    data-pack-company="ECO FERT CAMBODIA Co., Ltd."
+                                    data-pack-company-country="កម្ពុជា"
+                                >
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
+                                              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <circle cx="12" cy="12" r="3" stroke-width="1.6"/>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Urea%</td>
+                            <td>1000</td>
+                            <td>1000</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>
+                                <button
+                                    class="table-action-btn"
+                                    type="button"
+                                    aria-label="មើលលម្អិត"
+                                    onclick="openFertModal(this)"
+                                    data-yatha="Urea 46%"
+                                    data-category="ជីគីមី"
+                                    data-trade="Super Urea"
+                                    data-prod-country="វៀតណាម"
+                                    data-prod-company="VN Urea Industries"
+                                    data-prod-company-country="វៀតណាម"
+                                    data-pack-country="កម្ពុជា"
+                                    data-pack-company="ECO FERT CAMBODIA Co., Ltd."
+                                    data-pack-company-country="កម្ពុជា"
+                                >
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
+                                              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <circle cx="12" cy="12" r="3" stroke-width="1.6"/>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>DAP</td>
+                            <td>1000</td>
+                            <td>1000</td>
+                           <td>5</td>
+                            <td>5</td>
+                            <td>
+                                <button
+                                    class="table-action-btn"
+                                    type="button"
+                                    aria-label="មើលលម្អិត"
+                                    onclick="openFertModal(this)"
+                                    data-yatha="DAP 18-46-0"
+                                    data-category="ជីគីមី"
+                                    data-trade="FertiDAP"
+                                    data-prod-country="ចិន"
+                                    data-prod-company="FertiDAP China Co., Ltd."
+                                    data-prod-company-country="ចិន"
+                                    data-pack-country="កម្ពុជា"
+                                    data-pack-company="ECO FERT CAMBODIA Co., Ltd."
+                                    data-pack-company-country="កម្ពុជា"
+                                >
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
+                                              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <circle cx="12" cy="12" r="3" stroke-width="1.6"/>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>BBB</td>
+                            <td>1000</td>
+                            <td>1000</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>
+                                <button
+                                    class="table-action-btn"
+                                    type="button"
+                                    aria-label="មើលលម្អិត"
+                                    onclick="openFertModal(this)"
+                                    data-yatha="កំប៉ុស"
+                                    data-category="ជីសរីរាង្គ"
+                                    data-trade="Organic Plus"
+                                    data-prod-country="កម្ពុជា"
+                                    data-prod-company="ECO FERT CAMBODIA Co., Ltd."
+                                    data-prod-company-country="កម្ពុជា"
+                                    data-pack-country="កម្ពុជា"
+                                    data-pack-company="ECO FERT CAMBODIA Co., Ltd."
+                                    data-pack-company-country="កម្ពុជា"
+                                >
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
+                                              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <circle cx="12" cy="12" r="3" stroke-width="1.6"/>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>NPK</td>
+                            <td>1000</td>
+                            <td>1000</td>
+                           <td>5</td>
+                            <td>5</td>
+                            <td>
+                                <button
+                                    class="table-action-btn"
+                                    type="button"
+                                    aria-label="មើលលម្អិត"
+                                    onclick="openFertModal(this)"
+                                    data-yatha="NPK 16-16-8"
+                                    data-category="ជីលាយបញ្ចូលគ្នា"
+                                    data-trade="AgroMix 16"
+                                    data-prod-country="ថៃ"
+                                    data-prod-company="AgroMix Thailand Co., Ltd."
+                                    data-prod-company-country="ថៃ"
+                                    data-pack-country="ថៃ"
+                                    data-pack-company="AgroMix Thailand Co., Ltd."
+                                    data-pack-company-country="ថៃ"
+                                >
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
+                                              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <circle cx="12" cy="12" r="3" stroke-width="1.6"/>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>កំប៉ុសBVV</td>
+                            <td>1000</td>
+                            <td>1000</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>
+                                <button
+                                    class="table-action-btn"
+                                    type="button"
+                                    aria-label="មើលលម្អិត"
+                                    onclick="openFertModal(this)"
+                                    data-yatha="កំប៉ុស + NPK"
+                                    data-category="ជីលាយបញ្ចូលគ្នា"
+                                    data-trade="GreenCombo"
+                                    data-prod-country="វៀតណាម"
+                                    data-prod-company="GreenCombo VN Co., Ltd."
+                                    data-prod-company-country="វៀតណាម"
+                                    data-pack-country="កម្ពុជា"
+                                    data-pack-company="ECO FERT CAMBODIA Co., Ltd."
+                                    data-pack-company-country="កម្ពុជា"
+                                >
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
+                                              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <circle cx="12" cy="12" r="3" stroke-width="1.6"/>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>NPK AGGG</td>
+                            <td>1000</td>
+                            <td>1000</td>
+                           <td>5</td>
+                            <td>5</td>
+                            <td>
+                                <button
+                                    class="table-action-btn"
+                                    type="button"
+                                    aria-label="មើលលម្អិត"
+                                    onclick="openFertModal(this)"
+                                    data-yatha="NPK 20-20-15"
+                                    data-category="ជីគីមី"
+                                    data-trade="AgriPro 20"
+                                    data-prod-country="ចិន"
+                                    data-prod-company="AgriPro China Co., Ltd."
+                                    data-prod-company-country="ចិន"
+                                    data-pack-country="កម្ពុជា"
+                                    data-pack-company="ECO FERT CAMBODIA Co., Ltd."
+                                    data-pack-company-country="កម្ពុជា"
+                                >
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
+                                              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <circle cx="12" cy="12" r="3" stroke-width="1.6"/>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>JHHHH</td>
+                            <td>1000</td>
+                            <td>1000</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>
+                                <button
+                                    class="table-action-btn"
+                                    type="button"
+                                    aria-label="មើលលម្អិត"
+                                    onclick="openFertModal(this)"
+                                    data-yatha="ជីកំប៉ុសស្អិត"
+                                    data-category="ជាីសរីរាង្គ"
+                                    data-trade="Compost Max"
+                                    data-prod-country="កម្ពុជា"
+                                    data-prod-company="ECO FERT CAMBODIA Co., Ltd."
+                                    data-prod-company-country="កម្ពុជា"
+                                    data-pack-country="កម្ពុជា"
+                                    data-pack-company="ECO FERT CAMBODIA Co., Ltd."
+                                    data-pack-company-country="កម្ពុជា"
+                                >
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
+                                              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <circle cx="12" cy="12" r="3" stroke-width="1.6"/>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>NPKSGGG</td>
+                            <td>1000</td>
+                            <td>1000</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>
+                                <button
+                                    class="table-action-btn"
+                                    type="button"
+                                    aria-label="មើលលម្អិត"
+                                    onclick="openFertModal(this)"
+                                    data-yatha="NPK 12-12-17"
+                                    data-category="ជីលាយបញ្ចូលគ្នា"
+                                    data-trade="RiceBooster"
+                                    data-prod-country="ថៃ"
+                                    data-prod-company="RiceBooster Thailand Co., Ltd."
+                                    data-prod-company-country="ថៃ"
+                                    data-pack-country="កម្ពុជា"
+                                    data-pack-company="ECO FERT CAMBODIA Co., Ltd."
+                                    data-pack-company-country="កម្ពុជា"
+                                >
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
+                                              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <circle cx="12" cy="12" r="3" stroke-width="1.6"/>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>កំប៉ុសបៃតង</td>
+                            <td>1000</td>
+                            <td>1000</td>
+                           <td>5</td>
+                            <td>5</td>
+                            <td>
+                                <button
+                                    class="table-action-btn"
+                                    type="button"
+                                    aria-label="មើលលម្អិត"
+                                    onclick="openFertModal(this)"
+                                    data-yatha="កំប៉ុសបៃតង"
+                                    data-category="ជីសរីរាង្គ"
+                                    data-trade="EcoCompost"
+                                    data-prod-country="កម្ពុជា"
+                                    data-prod-company="ECO FERT CAMBODIA Co., Ltd."
+                                    data-prod-company-country="កម្ពុជា"
+                                    data-pack-country="កម្ពុជា"
+                                    data-pack-company="ECO FERT CAMBODIA Co., Ltd."
+                                    data-pack-company-country="កម្ពុជា"
+                                >
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
+                                              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <circle cx="12" cy="12" r="3" stroke-width="1.6"/>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="total-count">
+                    ចំនួនមុខសរុប: 10
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- ================= Section 1: Applicant info ================= -->
     <div class="section">
         <div class="section-header" onclick="toggleSection(this)">
-            ១. ព័ត៌មានអ្នកឈរឈ្មោះ
+            ២. ព័ត៌មានអ្នកឈរឈ្មោះ
         </div>
         <div class="section-content">
             <div class="form-container">
@@ -1080,20 +1448,20 @@
                             </div>
                         </div>
                         <!-- Row: phone / email (3 + 3 + 3 + 3) -->
-                                <div class="kv-row">
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-label">លេខទូរសព្ទ៖</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-value">012 345 678</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-label">អ៊ីម៉ែល៖</span>
-                                    </div>
-                                    <div class="kv-col kv-col-2">
-                                        <span class="kv-value">info@ecofert.com</span>
-                                    </div>
-                                </div>
+                        <div class="kv-row">
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">លេខទូរសព្ទ៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">012 345 678</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-label">អ៊ីម៉ែល៖</span>
+                            </div>
+                            <div class="kv-col kv-col-2">
+                                <span class="kv-value">info@ecofert.com</span>
+                            </div>
+                        </div>
 
                     </div>
 
@@ -1140,33 +1508,33 @@
                         <div class="subsection-title">ឯកសារផ្ទេរសិទ្ទិ</div>
 
                         <div class="doc-item">
-                        <div class="doc-main">
-                            <div class="doc-meta-row">
-                                <span class="doc-status-hasfile">ឯកសារបានបញ្ចូល</span>
-                                <span class="doc-file-pill">
+                            <div class="doc-main">
+                                <div class="doc-meta-row">
+                                    <span class="doc-status-hasfile">ឯកសារបានបញ្ចូល</span>
+                                    <span class="doc-file-pill">
                                     <svg viewBox="0 0 24 24">
                                         <path d="M7 3h7l5 5v13H7z" fill="none" stroke="currentColor" stroke-width="1.4"/>
                                         <path d="M14 3v5h5" fill="none" stroke="currentColor" stroke-width="1.4"/>
                                     </svg>
                                     <span class="doc-file-name">business-registration-cert.pdf</span>
                                 </span>
+                                </div>
+                            </div>
+                            <div class="doc-actions">
+                                <button type="button" class="btn-link"
+                                        onclick="alert('Preview business-registration-cert.pdf');"
+                                        aria-label="មើលឯកសារ">
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
+                                              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <circle cx="12" cy="12" r="3" stroke-width="1.6"/>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
-                        <div class="doc-actions">
-                            <button type="button" class="btn-link"
-                                    onclick="alert('Preview business-registration-cert.pdf');"
-                                    aria-label="មើលឯកសារ">
-                                <svg viewBox="0 0 24 24" fill="none">
-                                    <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
-                                          stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <circle cx="12" cy="12" r="3" stroke-width="1.6"/>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
 
-                        
-                        
+
+
                     </div>
 
                 </div>
@@ -1175,364 +1543,7 @@
         </div>
     </div>
 
-    <!-- ================= Section 2: Request info ================= -->
-    <div class="section">
-        <div class="section-header" onclick="toggleSection(this)">
-            ២. ព័ត៌មានពាក្យស្នើសុំ
-        </div>
-        <div class="section-content">
-            <div class="form-container">
 
-                <!-- Purpose -->
-                <div class="review-title">គោលបំណងនៃការស្នើសុំ</div>
-                <div class="purpose-check-list">
-                    <label class="purpose-check">
-                        <input type="checkbox" checked disabled>
-                        <span>សម្រាប់គោលបំណងពាណិជ្ជកម្ម</span>
-                    </label>
-                    <label class="purpose-check">
-                        <input type="checkbox" checked disabled>
-                        <span>ការធ្វើវិភាគ</span>
-                    </label>
-                </div>
-
-                <hr style="border:none; border-top:1px solid #e5e7eb; margin:18px 0;">
-
-                <!-- Fertilizer list -->
-                <div class="review-title">ព័ត៌មានឃ្លាំងសន្និធិ</div>
-                <div class="fert-table-wrapper">
-                    <table class="review-table">
-                        <thead>
-                        <tr>
-                            <th>ល.រ.</th>
-                                    <th>ឈ្មោះឃ្លាំងសន្និធិ (ផលិតផលថ្នាំកសិកម្ម)</th>
-                                    <th>ឈ្មោះទូទៅ (សារធាតុសកម្ម)</th>
-                                    <th>លេខអត្តសញ្ញាន</th>
-                                    <th>ចំណាត់ថ្នាក់ថ្នាំកិសកម្ម</th>
-                                    <th>ប្រទេសប្រភពដើមផលិតឬលាយផ្សំ</th>
-                                    <th>សកម្មភាព</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>A</td>
-                            <td>1000</td>
-                            <td>1000</td>
-                            <td>5</td>
-                            <td>5</td>
-                            <td>
-                                <button
-                                    class="table-action-btn"
-                                    type="button"
-                                    aria-label="មើលលម្អិត"
-                                    onclick="openFertModal(this)"
-                                    data-yatha="NPK 15-15-15"
-                                    data-category="ជីគីមី"
-                                    data-trade="GreenGrow 15"
-                                    data-prod-country="ថៃ"
-                                    data-prod-company="GreenGrow Fertilizer Co., Ltd."
-                                    data-prod-company-country="ថៃ"
-                                    data-pack-country="កម្ពុជា"
-                                    data-pack-company="ECO FERT CAMBODIA Co., Ltd."
-                                    data-pack-company-country="កម្ពុជា"
-                                >
-                                    <svg viewBox="0 0 24 24" fill="none">
-                                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
-                                              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <circle cx="12" cy="12" r="3" stroke-width="1.6"/>
-                                    </svg>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Urea%</td>
-                            <td>1000</td>
-                            <td>1000</td>
-                            <td>5</td>
-                            <td>5</td>
-                            <td>
-                                <button
-                                    class="table-action-btn"
-                                    type="button"
-                                    aria-label="មើលលម្អិត"
-                                    onclick="openFertModal(this)"
-                                    data-yatha="Urea 46%"
-                                    data-category="ជីគីមី"
-                                    data-trade="Super Urea"
-                                    data-prod-country="វៀតណាម"
-                                    data-prod-company="VN Urea Industries"
-                                    data-prod-company-country="វៀតណាម"
-                                    data-pack-country="កម្ពុជា"
-                                    data-pack-company="ECO FERT CAMBODIA Co., Ltd."
-                                    data-pack-company-country="កម្ពុជា"
-                                >
-                                    <svg viewBox="0 0 24 24" fill="none">
-                                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
-                                              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <circle cx="12" cy="12" r="3" stroke-width="1.6"/>
-                                    </svg>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>DAP</td>
-                            <td>1000</td>
-                            <td>1000</td>
-                           <td>5</td>
-                            <td>5</td>
-                            <td>
-                                <button
-                                    class="table-action-btn"
-                                    type="button"
-                                    aria-label="មើលលម្អិត"
-                                    onclick="openFertModal(this)"
-                                    data-yatha="DAP 18-46-0"
-                                    data-category="ជីគីមី"
-                                    data-trade="FertiDAP"
-                                    data-prod-country="ចិន"
-                                    data-prod-company="FertiDAP China Co., Ltd."
-                                    data-prod-company-country="ចិន"
-                                    data-pack-country="កម្ពុជា"
-                                    data-pack-company="ECO FERT CAMBODIA Co., Ltd."
-                                    data-pack-company-country="កម្ពុជា"
-                                >
-                                    <svg viewBox="0 0 24 24" fill="none">
-                                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
-                                              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <circle cx="12" cy="12" r="3" stroke-width="1.6"/>
-                                    </svg>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>BBB</td>
-                            <td>1000</td>
-                            <td>1000</td>
-                            <td>5</td>
-                            <td>5</td>
-                            <td>
-                                <button
-                                    class="table-action-btn"
-                                    type="button"
-                                    aria-label="មើលលម្អិត"
-                                    onclick="openFertModal(this)"
-                                    data-yatha="កំប៉ុស"
-                                    data-category="ជីសរីរាង្គ"
-                                    data-trade="Organic Plus"
-                                    data-prod-country="កម្ពុជា"
-                                    data-prod-company="ECO FERT CAMBODIA Co., Ltd."
-                                    data-prod-company-country="កម្ពុជា"
-                                    data-pack-country="កម្ពុជា"
-                                    data-pack-company="ECO FERT CAMBODIA Co., Ltd."
-                                    data-pack-company-country="កម្ពុជា"
-                                >
-                                    <svg viewBox="0 0 24 24" fill="none">
-                                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
-                                              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <circle cx="12" cy="12" r="3" stroke-width="1.6"/>
-                                    </svg>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>NPK</td>
-                            <td>1000</td>
-                            <td>1000</td>
-                           <td>5</td>
-                            <td>5</td>
-                            <td>
-                                <button
-                                    class="table-action-btn"
-                                    type="button"
-                                    aria-label="មើលលម្អិត"
-                                    onclick="openFertModal(this)"
-                                    data-yatha="NPK 16-16-8"
-                                    data-category="ជីលាយបញ្ចូលគ្នា"
-                                    data-trade="AgroMix 16"
-                                    data-prod-country="ថៃ"
-                                    data-prod-company="AgroMix Thailand Co., Ltd."
-                                    data-prod-company-country="ថៃ"
-                                    data-pack-country="ថៃ"
-                                    data-pack-company="AgroMix Thailand Co., Ltd."
-                                    data-pack-company-country="ថៃ"
-                                >
-                                    <svg viewBox="0 0 24 24" fill="none">
-                                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
-                                              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <circle cx="12" cy="12" r="3" stroke-width="1.6"/>
-                                    </svg>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>កំប៉ុសBVV</td>
-                            <td>1000</td>
-                            <td>1000</td>
-                            <td>5</td>
-                            <td>5</td>
-                            <td>
-                                <button
-                                    class="table-action-btn"
-                                    type="button"
-                                    aria-label="មើលលម្អិត"
-                                    onclick="openFertModal(this)"
-                                    data-yatha="កំប៉ុស + NPK"
-                                    data-category="ជីលាយបញ្ចូលគ្នា"
-                                    data-trade="GreenCombo"
-                                    data-prod-country="វៀតណាម"
-                                    data-prod-company="GreenCombo VN Co., Ltd."
-                                    data-prod-company-country="វៀតណាម"
-                                    data-pack-country="កម្ពុជា"
-                                    data-pack-company="ECO FERT CAMBODIA Co., Ltd."
-                                    data-pack-company-country="កម្ពុជា"
-                                >
-                                    <svg viewBox="0 0 24 24" fill="none">
-                                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
-                                              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <circle cx="12" cy="12" r="3" stroke-width="1.6"/>
-                                    </svg>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>NPK AGGG</td>
-                            <td>1000</td>
-                            <td>1000</td>
-                           <td>5</td>
-                            <td>5</td>
-                            <td>
-                                <button
-                                    class="table-action-btn"
-                                    type="button"
-                                    aria-label="មើលលម្អិត"
-                                    onclick="openFertModal(this)"
-                                    data-yatha="NPK 20-20-15"
-                                    data-category="ជីគីមី"
-                                    data-trade="AgriPro 20"
-                                    data-prod-country="ចិន"
-                                    data-prod-company="AgriPro China Co., Ltd."
-                                    data-prod-company-country="ចិន"
-                                    data-pack-country="កម្ពុជា"
-                                    data-pack-company="ECO FERT CAMBODIA Co., Ltd."
-                                    data-pack-company-country="កម្ពុជា"
-                                >
-                                    <svg viewBox="0 0 24 24" fill="none">
-                                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
-                                              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <circle cx="12" cy="12" r="3" stroke-width="1.6"/>
-                                    </svg>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>JHHHH</td>
-                            <td>1000</td>
-                            <td>1000</td>
-                            <td>5</td>
-                            <td>5</td>
-                            <td>
-                                <button
-                                    class="table-action-btn"
-                                    type="button"
-                                    aria-label="មើលលម្អិត"
-                                    onclick="openFertModal(this)"
-                                    data-yatha="ជីកំប៉ុសស្អិត"
-                                    data-category="ជាីសរីរាង្គ"
-                                    data-trade="Compost Max"
-                                    data-prod-country="កម្ពុជា"
-                                    data-prod-company="ECO FERT CAMBODIA Co., Ltd."
-                                    data-prod-company-country="កម្ពុជា"
-                                    data-pack-country="កម្ពុជា"
-                                    data-pack-company="ECO FERT CAMBODIA Co., Ltd."
-                                    data-pack-company-country="កម្ពុជា"
-                                >
-                                    <svg viewBox="0 0 24 24" fill="none">
-                                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
-                                              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <circle cx="12" cy="12" r="3" stroke-width="1.6"/>
-                                    </svg>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>NPKSGGG</td>
-                            <td>1000</td>
-                            <td>1000</td>
-                            <td>5</td>
-                            <td>5</td>
-                            <td>
-                                <button
-                                    class="table-action-btn"
-                                    type="button"
-                                    aria-label="មើលលម្អិត"
-                                    onclick="openFertModal(this)"
-                                    data-yatha="NPK 12-12-17"
-                                    data-category="ជីលាយបញ្ចូលគ្នា"
-                                    data-trade="RiceBooster"
-                                    data-prod-country="ថៃ"
-                                    data-prod-company="RiceBooster Thailand Co., Ltd."
-                                    data-prod-company-country="ថៃ"
-                                    data-pack-country="កម្ពុជា"
-                                    data-pack-company="ECO FERT CAMBODIA Co., Ltd."
-                                    data-pack-company-country="កម្ពុជា"
-                                >
-                                    <svg viewBox="0 0 24 24" fill="none">
-                                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
-                                              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <circle cx="12" cy="12" r="3" stroke-width="1.6"/>
-                                    </svg>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>កំប៉ុសបៃតង</td>
-                            <td>1000</td>
-                            <td>1000</td>
-                           <td>5</td>
-                            <td>5</td>
-                            <td>
-                                <button
-                                    class="table-action-btn"
-                                    type="button"
-                                    aria-label="មើលលម្អិត"
-                                    onclick="openFertModal(this)"
-                                    data-yatha="កំប៉ុសបៃតង"
-                                    data-category="ជីសរីរាង្គ"
-                                    data-trade="EcoCompost"
-                                    data-prod-country="កម្ពុជា"
-                                    data-prod-company="ECO FERT CAMBODIA Co., Ltd."
-                                    data-prod-company-country="កម្ពុជា"
-                                    data-pack-country="កម្ពុជា"
-                                    data-pack-company="ECO FERT CAMBODIA Co., Ltd."
-                                    data-pack-company-country="កម្ពុជា"
-                                >
-                                    <svg viewBox="0 0 24 24" fill="none">
-                                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
-                                              stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <circle cx="12" cy="12" r="3" stroke-width="1.6"/>
-                                    </svg>
-                                </button>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="total-count">
-                    ចំនួនមុខសរុប: 10
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- ================= Section 3: Attachments ================= -->
     <div class="section">

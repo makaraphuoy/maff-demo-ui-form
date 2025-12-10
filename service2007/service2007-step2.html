@@ -354,7 +354,7 @@
         <!-- Page header -->
         <div class="page-header-soft">
             <div class="page-title">
-                ៧. លិខិតអនុញ្ញាតប្រតិបត្តិការលាយផ្សំ ឬវេចខ្ចប់ជាថ្មី ជីកសិកម្ម
+                ៤. លិខិតអនុញ្ញាតប្រតិបត្តិការលាយផ្សំ ឬវេចខ្ចប់ជាថ្មី ជីកសិកម្ម
             </div>
 
             <div class="page-home">
@@ -368,23 +368,7 @@
         <!-- Stepper (multi-page) -->
         <div class="stepper">
 
-            <a href="service2007-step1.html" class="step-item completed">
-                <div class="step-number">
-                    <!-- user icon -->
-                    <svg viewBox="0 0 24 24" fill="none">
-                        <circle cx="12" cy="8" r="3.5" stroke-width="1.8"/>
-                        <path d="M5 19c1.5-3 3.9-4.5 7-4.5s5.5 1.5 7 4.5" stroke-width="1.8" stroke-linecap="round"/>
-                    </svg>
-                </div>
-                <div class="step-texts">
-                    <span class="step-label-main">ព័ត៌មានអ្នកឈរឈ្មោះ</span>
-                </div>
-                <div class="step-next-icon">
-                    <svg viewBox="0 0 24 24" fill="none">
-                        <path d="M9 6l6 6-6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-            </a>
+
 
             <a href="service2007-step2.html" class="step-item active">
                 <div class="step-number">
@@ -397,6 +381,24 @@
                 </div>
                 <div class="step-texts">
                     <span class="step-label-main">ព័ត៌មានពាក្យស្នើសុំ</span>
+                </div>
+                <div class="step-next-icon">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M9 6l6 6-6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </a>
+
+            <a href="service2007-step1.html" class="step-item completed">
+                <div class="step-number">
+                    <!-- user icon -->
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="8" r="3.5" stroke-width="1.8"/>
+                        <path d="M5 19c1.5-3 3.9-4.5 7-4.5s5.5 1.5 7 4.5" stroke-width="1.8" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="step-texts">
+                    <span class="step-label-main">ព័ត៌មានអ្នកឈរឈ្មោះ</span>
                 </div>
                 <div class="step-next-icon">
                     <svg viewBox="0 0 24 24" fill="none">
@@ -461,6 +463,7 @@
             </a>
         </div>
 
+        <!--
         <div class="section">
             <div class="section-header">
                 ១. អត្តសញ្ញាណនៃប្រភពលាយផ្សំ ឬផ្គត់ផ្គង់ចែកចាយ
@@ -571,50 +574,104 @@
             </div>
         </div>
 
-
+-->
 
         <!-- STEP 2 CONTENT -->
         <div class="section">
             <div class="section-header">
-                ២. ព័ត៌មានពាក្យស្នើសុំ
+                ១. ព័ត៌មានពាក្យស្នើសុំ
             </div>
             <div class="section-content" style="max-height:none;">
                 <div class="form-container">
 
-                    <!-- Sub-section 1 -->
+
                     <h3 style="color:#008000; font-size:16px; margin-bottom:12px;">
-                        ១. គោលបំណងនៃការស្នើសុំ
+                        ១. លក្ខណនៃសំណើ
                     </h3>
 
                     <div class="checkbox-grid">
 
                         <label class="checkbox-pill-row">
-                            <input type="checkbox" name="purpose[]" value="registration">
+                            <input type="radio" name="purpose[]" value="registration">
+                            <span>ការចុះបញ្ជី</span>
+                        </label>
+
+
+
+                        <label class="checkbox-pill-row">
+                            <input type="radio" name="purpose[]" value="new_register">
+                            <span>ចុះបញ្ជីជាថ្មី</span>
+                        </label>
+
+                    </div>
+
+                    <div id="newRegisterInput" class="hidden">
+
+                        <div class="popup-row1">
+                            <div class="form-group" style="margin-top: 20px">
+                                <label style="font-weight: bold">
+                                    លេខវិញ្ញាបនបត្របញ្ជាក់បញ្ជីកសិកម្ម
+                                    <span class="required">*</span>
+                                </label>
+
+                                <div class="input-group">
+                                    <input type="text" id="fert_type" style="width:300px">
+
+                                    <button
+                                            type="button"
+                                            class="btn btn-primary"
+                                            style="align-items:center; gap:6px; border-radius:8px; padding:10px 14px;">
+                                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="11" cy="11" r="7"></circle>
+                                            <line x1="16" y1="16" x2="21" y2="21"></line>
+                                        </svg>
+                                        ស្វែងរក
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <hr style="border:none; border-top:1px solid #e5e7eb; margin:20px 0;">
+
+
+                    <!-- Sub-section 1 -->
+                    <h3 style="color:#008000; font-size:16px; margin-bottom:12px;">
+                        ២. គោលបំណង
+                    </h3>
+
+                    <div class="checkbox-grid">
+
+                        <label class="checkbox-purpose">
+                            <input type="checkbox" name="purpose១[]" value="commercial">
                             <span>ការនាំចេញ</span>
                         </label>
 
-                        <label class="checkbox-pill-row">
-                            <input type="checkbox" name="purpose[]" value="analysis">
+                        <label class="checkbox-purpose">
+                            <input type="checkbox" name="purpose១[]" value="non_commercial">
                             <span>ការវេចខ្ចប់ជាថ្មី</span>
                         </label>
 
-                        <label class="checkbox-pill-row">
-                            <input type="checkbox" name="purpose[]" value="bioeffectiveness">
+                        <label class="checkbox-purpose">
+                            <input type="checkbox" name="purpose១[]" value="non_commercial">
                             <span>ការផ្គត់ផ្គង់ចែកចាយ</span>
                         </label>
 
-                         <label class="checkbox-pill-row">
-                            <input type="checkbox" name="purpose[]" value="bioeffectiveness">
-                            <span>ការបន្តសុពលភាពលិខិតអនុញ្ញាត</span>
-                        </label>
-                         <label class="checkbox-pill-row">
-                            <input type="checkbox" name="purpose[]" value="bioeffectiveness">
-                            <span>ការផ្ទេរសិទ្ធិលើលិខិតអនុញ្ញាត</span>
+                        <label class="checkbox-purpose">
+                            <input type="checkbox" name="purpose១[]" value="non_commercial">
+                            <span>ការផ្គត់ផ្គង់ចែកចាយ</span>
                         </label>
 
-                        <label class="checkbox-pill-row">
-                            <input type="checkbox" name="purpose[]" value="commercial">
+
+                        <label class="checkbox-purpose" id="other_purpose" style="display:flex; align-items:center; gap:12px; width:100%;">
+                            <input type="checkbox" name="purpose១[]" value="non_commercial" id="purpose_other" onclick="toggleOtherPurpose()">
                             <span>គោលបំណងផ្សេងទៀត</span>
+                            <div id="purpose_other_group" class="input-group" style="display:none; flex:1;">
+                                <input type="text" class="form-control" placeholder="សូមបញ្ជាក់ *" style="padding: 8px 10px;border: 1px solid #d1d5db;border-radius: 6px;font-size: 14px;width: 100%;">
+                            </div>
                         </label>
 
 
@@ -624,22 +681,10 @@
 
                     <!-- Sub-section 2 -->
                     <h3 style="color:#008000; font-size:16px; margin-bottom:12px;">
-                        ២. យថាប្រភេទជីកសិកម្ម សមត្ថភាពផលិតលាយផ្សំ ឬវេចខ្ចប់ជាថ្មី
+                        ៣. យថាប្រភេទជីកសិកម្ម សមត្ថភាពផលិតលាយផ្សំ ឬវេចខ្ចប់ជាថ្មី
                     </h3>
 
-                    <!-- Add button -->
-                    <div style="display:flex; justify-content:flex-end; margin-bottom:10px;">
-                        <button 
-                            type="button" 
-                            class="btn btn-primary" 
-                            style="display:flex; align-items:center; gap:6px; border-radius:8px; padding:5px 14px;"
-                            onclick="openFertilizerPopupForAdd()">
-                            <svg viewBox="0 0 24 24" width="18" height="18">
-                                <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" fill="none"/>
-                            </svg>
-                            បន្ថែម
-                        </button>
-                    </div>
+
 
                     <!-- Table -->
                     <div class="fertilizer-table-wrapper">
@@ -664,16 +709,28 @@
                         </div>
                     </div>
 
+                    <!-- Add button -->
+                    <div style="display:flex; justify-content:flex-end; margin-bottom:10px;">
+                        <button
+                                type="button"
+                                class="btn btn-primary"
+                                style="display:flex; align-items:center; gap:6px; border-radius:8px; padding:5px 14px;"
+                                onclick="openFertilizerPopupForAdd()">
+                            <svg viewBox="0 0 24 24" width="18" height="18">
+                                <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                            បន្ថែម
+                        </button>
+                    </div>
+
                 </div>
             </div>
         </div>
 
-        <!-- Bottom navigation -->
         <div class="step-nav">
-            <!-- Left -->
-            <button class="btn btn-outline-green" type="button">
+            <button class="btn btn-outline-green">
                 <span class="btn-icon">
-                    <svg viewBox="0 0 24 24">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M5 3h14v18H5z" fill="none" stroke="currentColor" stroke-width="1.6"/>
                         <path d="M5 9h14" stroke="currentColor" stroke-width="1.6"/>
                         <path d="M9 3v6" stroke="currentColor" stroke-width="1.6"/>
@@ -683,26 +740,15 @@
                 រក្សាទុក & ចាកចេញ
             </button>
 
-            <!-- Right buttons -->
-            <div class="step-right-group">
-                <a href="service2007-step1.html" class="btn btn-outline-green">
-                    <span class="btn-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" fill="none"/>
-                        </svg>
-                    </span>
-                    ត្រឡប់ក្រោយ
-                </a>
 
-                <a href="service2007-step3.html" class="btn btn-primary">
-                    បន្ទាប់
-                    <span class="btn-icon-right">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/>
-                        </svg>
-                    </span>
-                </a>
-            </div>
+            <button class="btn btn-primary" onclick="window.location.href='service2007-step1.html'">
+                បន្ទាប់
+                <span class="btn-icon-right">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" />
+                </svg>
+                  </span>
+            </button>
         </div>
 
     </div>
@@ -1045,6 +1091,40 @@
             // same as edit
             openFertilizerPopupForEdit(index);
         }
+        document.addEventListener("DOMContentLoaded", function () {
+            const radios = document.querySelectorAll('input[name="purpose[]"]');
+            const newRegisterInput = document.getElementById("newRegisterInput");
+
+            radios.forEach(radio => {
+                radio.addEventListener("change", function () {
+                    if (this.value === "new_register") {
+                        newRegisterInput.classList.remove("hidden");
+                    } else {
+                        newRegisterInput.classList.add("hidden");
+                    }
+                });
+            });
+        });
+        function toggleOtherPurpose() {
+            const cb = document.getElementById('purpose_other');
+            const group = document.getElementById('purpose_other_group');
+
+            const input = document.getElementById('other_purpose');
+
+
+            group.style.display = cb.checked ? "block" : "none";
+
+
+            if (cb.checked) {
+                input.style.width = "500px";   // 🔥 set width when checked
+            } else {
+                input.style.width = "100%";        // reset width
+            }
+
+
+
+        }
+
     </script>
 </body>
 </html>
